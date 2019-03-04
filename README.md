@@ -1,2 +1,2 @@
-# advancedl_inux_2019
+# Advanced_Linux_2019
 Advanced linux course for biologists and genomics data formats
