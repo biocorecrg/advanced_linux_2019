@@ -19,4 +19,7 @@ Location:
 from the CRG [Bioinformatics core facility](https://biocore.crg.eu/) (office 460, 4th floor hotel side)
 
 # Learning objectives
-* 
+To be able to:
+* Access genomics data from public repositories
+* Know the existance of different data formats
+* Be able to use the Linux commands to parse and convert those formats
