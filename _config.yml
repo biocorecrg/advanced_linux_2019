@@ -1,1 +1,5 @@
 theme: jekyll-theme-architect
+title: CRG - Advanced Linux 2019
+markdown: kramdown
+kramdown:
+  parse_block_html: true
