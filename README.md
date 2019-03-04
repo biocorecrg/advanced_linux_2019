@@ -13,7 +13,7 @@ Location:
 
 |[Luca Cozzuto](mailto:luca.cozzuto@crg.eu)| [Julia Ponomarenko](mailto:julia.ponomarenko@crg.eu)  | [Sarah Bonnin](mailto:sarah.bonnin@crg.eu) |
 | :---:  | :---:  | :---:  |
-|<a href="https://biocore.crg.eu/wiki/User:Lcozzuto"><img src="pics/lcozzuto.jpg" width="100"/> </a> |<a href="https://biocore.crg.eu/wiki/User:Jponomarenko"><img src="pics/jponomarenko.jpg" width="100"/> </a> |<a href="https://biocore.crg.eu/wiki/User:SBonnin"><img src="pics/sbonning.jpg" width="100"/></a> | 
+|<a href="https://biocore.crg.eu/wiki/User:Lcozzuto"><img src="pics/lcozzuto.jpg" width="100"/> </a> |<a href="https://biocore.crg.eu/wiki/User:Jponomarenko"><img src="pics/ponomarenko.JPG" width="100"/> </a> |<a href="https://biocore.crg.eu/wiki/User:SBonnin"><img src="pics/sbonnin.jpg" width="100"/></a> | 
 
 
 from the CRG [Bioinformatics core facility](https://biocore.crg.eu/) (office 460, 4th floor hotel side)
