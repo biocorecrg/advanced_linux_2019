@@ -1,7 +1,7 @@
 # Dates, time & location
 Dates:
-* Module 1: Monday 19th 2019
-* Module 2: Monday 21st 2019
+* **Module 1: Monday 19th 2019**
+* **Module 2: Monday 21st 2019**
 
 Time:
 * 09:30-13:30 
@@ -23,3 +23,7 @@ To be able to:
 * Access genomics data from public repositories
 * Know the existance of different data formats
 * Be able to use the Linux commands to parse and convert those formats
+
+# Program
+* **Module one**
+* **Module two**
