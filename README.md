@@ -9,7 +9,7 @@ Time:
 Location:
 Carrer del Dr. Aiguader, 88, 08003 Barcelona.
 CRG Training center, PRBB building ground floor. 
-<iframe src="https://goo.gl/maps/e99STmDywC22" width="640" height="480"></iframe>
+<iframe src="https://goo.gl/maps/e99STmDywC22" width="320" height="240"></iframe>
 
 
 ## Instructors
