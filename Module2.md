@@ -2,13 +2,13 @@
 
 <h3>The plan</h3>
 
-[GTF files](#module2_gtf)
-[Tabular files](#module2_tab)
-[Space in volumes](#module2_space)
-[Permissions](#module2_perm)
-[Variables](#module2_var)
-["For" Loops](#module2_loops)
-[Introduction to VIM text editor](#module2_vim)
+* [GTF files](#module2_gtf)
+* [Tabular files](#module2_tab)
+* [Space in volumes](#module2_space)
+* [Permissions](#module2_perm)
+* [Variables](#module2_var)
+* ["For" Loops](#module2_loops)
+* [Introduction to VIM text editor](#module2_vim)
 
 <a name="module2_gtf"></a>
 <h3>GTF files</h3>
