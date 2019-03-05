@@ -28,7 +28,14 @@ To be able to:
 * Be able to use the Linux commands to parse and convert those formats
 
 # Program
-* **Module one**
+* [**Module one**] (https://biocorecrg.github.io/advanced_linux_2019/Module1)
+	* Create directory and practice moving around.
+	* Download files from repositories. 
+	* Manipulate file, parsing, reformatting.
+	* Knowing more about a function.
+	* Regular expressions.
+	* Fasta, fastq, bed formats
+
 * [**Module two**](https://biocorecrg.github.io/advanced_linux_2019/Module2)
 	* GTF files
 	* Tabular formats
