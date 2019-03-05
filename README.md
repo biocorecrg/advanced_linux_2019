@@ -9,7 +9,7 @@ Time:
 Location:
 Carrer del Dr. Aiguader, 88, 08003 Barcelona.
 CRG Training center, PRBB building ground floor. 
-<iframe src="https://www.google.com/maps/place/PRBB+Parc+de+Recerca+Biom%C3%A8dica+de+Barcelona/@41.3852331,2.1942455,15z/data=!4m5!3m4!1s0x0:0x81e449abea5aae0e!8m2!3d41.3852331!4d2.1942455" width="320" height="240"></iframe>
+<iframe src="http://goo.gl/maps/Nk7zmyqwjP22" width="320" height="240"></iframe>
 
 
 ## Instructors
