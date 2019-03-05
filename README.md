@@ -29,4 +29,11 @@ To be able to:
 
 # Program
 * **Module one**
-* **Module two**
+* [**Module two**](https://biocorecrg.github.io/advanced_linux_2019/Module2)
+	* GTF files
+	* Tabular formats
+	* Space on volumes
+	* Permissions
+	* Variables
+	* "For" loops
+	* Introduction to VIM text editor (if time allows)
