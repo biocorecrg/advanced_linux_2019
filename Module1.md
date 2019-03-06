@@ -1,6 +1,7 @@
 <h2>Module 1</h2>
 
 <h3>The plan</h3>
+
 * [Create directory and practice moving around](#module1_dir)
 * [Download files from repositories](#module1_down)
 * [Manipulate file, parsing, reformatting](#module1_pars)
