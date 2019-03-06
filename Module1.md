@@ -12,7 +12,14 @@
 <a name="module1_dir"></a>
 <h3>Create directory and practice moving around</h3>
 
+To create file and folders in linux is quite simple. You can use a number of programs for creating an empty file (**touch**) or an empty directory (**mkdir**)
 
+```{bash}
+touch my_beautiful_file.txt
+mkdir my_beautiful_folder
+```
+
+To change the name of a file
 
 <a name="module1_down"></a>
 <h3>Download files from repositories</h3>
