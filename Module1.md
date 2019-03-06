@@ -74,5 +74,8 @@ $ my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
 
 Sometimes we get lost and would like to know where we are. We can use the command **pwd**
 
+<h3>Next Session</h3>
+
+[Download files from repositories](https://biocorecrg.github.io/advanced_linux_2019/download)
 
 
