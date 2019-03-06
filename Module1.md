@@ -32,6 +32,7 @@ To change the name of a file (or a directory) you can use the command **mv** whi
 ```{bash}
 mv my_beautiful_file.txt my_ugly_file.txt
 mv my_beautiful_folder my_ugly_folder
+
 cp my_ugly_file.txt my_beautiful_file.txt
 cp my_ugly_folder -r my_beautiful_folder
 ```
@@ -47,6 +48,7 @@ You can use **mv** also for moving a file (or a directory) inside a folder. Also
 ```{bash}
 mv my_beautiful_file.txt my_beautiful_folder
 cp my_ugly_file.txt my_ugly_folder
+
 ls
 $ my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
 ```
@@ -55,6 +57,7 @@ For entering in a folder we can use the tool **cd**
 
 ```{bash}
 cd my_ugly_folder
+
 ls
 $ my_ugly_file.txt
 ```
@@ -62,17 +65,18 @@ $ my_ugly_file.txt
 For going out we can move one level out 
 ```{bash}
 cd ../
+
 ls
 $ my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
 ```
 
+<img src="pics/lost.jpg" width="400"/>
+
 Sometimes we get lost and would like to know where we are. We can use the command **pwd**
-
-
 
 <a name="module1_down"></a>
 <h3>Download files from repositories</h3>
-
+Several institutions hosts differen kind of genomics data. For example the genome broswer [Ensembl](https://www.ensembl.org/index.html) is also a public repository of genomes and annotation that can be freely donloaded and used for any kind of analysis.
 
 <a name="module1_pars"></a>
 <h3>Manipulate file, parsing, reformatting</h3>
