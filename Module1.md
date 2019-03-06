@@ -3,7 +3,7 @@
 <h3>The plan</h3>
 
 * [Create directory and practice moving around](#module1_dir)
-* [Download files from repositories](#module1_down)
+* [Download files from repositories](https://biocorecrg.github.io/advanced_linux_2019/download)
 * [Manipulate file, parsing, reformatting](#module1_pars)
 * [Knowing more about a function](#module1_man)
 * [Regular expressions](#module1_regex)
