@@ -76,10 +76,16 @@ Sometimes we get lost and would like to know where we are. We can use the comman
 
 <a name="module1_down"></a>
 <h3>Download files from repositories</h3>
+
 Several institutions hosts differen kind of genomics data. For example the genome broswer **Ensembl** (https://www.ensembl.org/index.html) is also a public repository of genomes and annotation that can be freely donloaded and used for any kind of analysis.
-The resource **Ensembl Bacteria** (https://bacteria.ensembl.org/index.html) contains a large number of bacterial genomes and their annotation. As an example we can browse the page corresponding to *Escherichia coli 'BL21-Gold(DE3)pLysS AG'* https://bacteria.ensembl.org/Escherichia_coli_bl21_gold_de3_plyss_ag_/Info/Index
+The resource **Ensembl Bacteria** (https://bacteria.ensembl.org/index.html) contains a large number of bacterial genomes and their annotation. As an example we can browse the page corresponding to *Escherichia coli 'BL21-Gold(DE3)pLysS AG'* 
+
+
+https://bacteria.ensembl.org/Escherichia_coli_bl21_gold_de3_plyss_ag_/Info/Index/
 
 <img src="images/ensembl_escherichia.png" width="800"/>
+
+We can click on **Download genes, cDNAs, ncRNA, proteins -** [**FASTA**](ftp://ftp.ensemblgenomes.org/pub/bacteria/release-42/fasta/bacteria_22_collection/escherichia_coli_bl21_gold_de3_plyss_ag_)
 
 <a name="module1_pars"></a>
 <h3>Manipulate file, parsing, reformatting</h3>
