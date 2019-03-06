@@ -1,4 +1,4 @@
-M	<h2>Module 2</h2>
+<h2>Module 2</h2>
 
 <h3>The plan</h3>
 
