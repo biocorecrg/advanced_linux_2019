@@ -1,14 +1,19 @@
-<h2>Module 2</h2>
+M	<h2>Module 2</h2>
 
 <h3>The plan</h3>
 
-* [GTF files](#module2_gtf)
 * [Tabular files](#module2_tab)
+* [GTF files](#module2_gtf)
 * [Space in volumes](#module2_space)
 * [Permissions](#module2_perm)
 * [Variables](#module2_var)
 * ["For" Loops](#module2_loops)
 * [Introduction to VIM text editor](#module2_vim)
+
+<a name="module2_tab"></a>
+<h3>Tabular files</h3>
+
+
 
 <a name="module2_gtf"></a>
 <h3>GTF files</h3>
@@ -80,9 +85,6 @@ zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | awk '$3=="gene" {print $10}' | sed 's/"
 ```{bash}
 zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | awk '$3=="gene" {print $1"\t"$4"\t"$5"\t.\t.\t"$7}' | sed 's/"//g' | sed 's/;//g' > genes_Homo_sapiens.GRCh38.94.bed
 ```
-
-<a name="module2_tab"></a>
-<h3>Tabular files</h3>
 
 <a name="module2_space"></a>
 <h3>Space in volumes</h3>
