@@ -35,7 +35,19 @@ grep ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa | tail -n
 >ACT31308 pep supercontig:ASM2366v1:CP001665:4570162:4570488:-1 gene:ECBD_4329 transcript:ACT31308 gene_biotype:protein_coding transcript_biotype:protein_coding description:ribonuclease P protein component
 >ACT31309 pep supercontig:ASM2366v1:CP001665:4570538:4570678:-1 gene:ECBD_4330 transcript:ACT31309 gene_biotype:protein_coding transcript_biotype:protein_coding description:ribosomal protein L34
 ```
-Now let's try to extract only the identifiers from the sequence names. As we can see they are located just before a **space**. So we can slice the first column using the space as delimiter using the program **cut** and the option **-d " "**.
+
+Going back to the genome file, we can use a combination of **grep** and **wc** to count the number of bases. The option **-v** of **Grep** will remove the row with the indicated character. The option **-m** of **wc** tool allows to count only the characters, while **-l** gives you the nnumber of lines. 
+
+```{bash}
+grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa| wc -m
+4647121
+
+grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa| wc -l
+76183
+```
+
+Now let's try to extract only the identifiers from the protein file. As we can see they are located just before a 
+**space**. So we can slice the first column using the space as delimiter using the program **cut** and the option **-d " "**.
 
 ```{bash}
 cut -f 1 -d " " seq_names.txt |head -n 5 
@@ -55,15 +67,31 @@ ACT27084
 ACT27085
 ACT27086
 ```
-Going back to the genome file, we can use a combination of **grep** and **wc** to count the number of bases. The option **-v** of **Grep** will remove the row with the indicated character. The option **-m** of **wc** tool allows to count only the characters, while **-l** gives you the nnumber of lines. 
+
+Sometimes can be useful to have a random list of identifiers (for instance to have a random background). We can achieve this with the program **shuf**. The program **cat** shows the full content of a file. 
 
 ```{bash}
-grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa| wc -m
-4647121
+cut -f 1 -d " " seq_names.txt | tr -d ">" |shuf | head -n 5 > random.list
 
-grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa| wc -l
-76183
+cat random.list 
+ACT31118
+ACT27123
+ACT31080
+ACT28234
+ACT29418
 ```
+PS: the list is random, so it is unlikely you will get the same result.
+
+A list of identifier can be quite useful to go back to the original name list to extract the whole information. We can do this using again the program **grep** with the options **-F** (it means search a fixed string, do not interpret it... we will explain this later) and **-f** for using patterns specified in a file.
+
+```{bash}
+grep -Ff random.list seq_names.txt 
+>ACT27123 pep supercontig:ASM2366v1:CP001665:44295:44414:-1 gene:ECBD_0043 transcript:ACT27123 gene_biotype:protein_coding transcript_biotype:protein_coding description:hypothetical protein
+>ACT28234 pep supercontig:ASM2366v1:CP001665:1230560:1230991:1 gene:ECBD_1168 transcript:ACT28234 gene_biotype:protein_coding transcript_biotype:protein_coding description:Nucleoside-diphosphate kinase
+>ACT29418 pep supercontig:ASM2366v1:CP001665:2508388:2509098:-1 gene:ECBD_2392 transcript:ACT29418 gene_biotype:protein_coding transcript_biotype:protein_coding description:nitrate reductase molybdenum cofactor assembly chaperone
+>ACT31080 pep supercontig:ASM2366v1:CP001665:4316460:4317305:1 gene:ECBD_4097 transcript:ACT31080 gene_biotype:protein_coding transcript_biotype:protein_coding description:MIP family channel protein
+>ACT31118 pep supercontig:ASM2366v1:CP001665:4355734:4355916:-1 gene:ECBD_4135 transcript:ACT31118 gene_biotype:protein_coding transcript_biotype:protein_coding description:hypothetical protein
+
 
 
 
