@@ -18,7 +18,8 @@ ption:DNA replication and repair protein RecF
 ption:DNA gyrase, B subunit
 ```
 
-We can also **pipe** the results of a program (via Standard output) to a new program (via Standard input) by using the character **|**. Te program **head** allows to extract the first N rows (indicated by the parameter **-n**). Tail, instead allows to get the latest N rows.
+We can also **pipe** the results of a program (via Standard output) to a new program (via Standard input) by using the character 
+```|```, the program **head** allows to extract the first N rows (indicated by the parameter **-n**). Tail, instead allows to get the latest N rows.
 
 ```{bash}
 grep ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa | wc -l 
