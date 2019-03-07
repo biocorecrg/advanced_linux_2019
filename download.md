@@ -80,7 +80,7 @@ After reading the README we can download the file named **toplevel** that contai
 wget ftp://ftp.ensemblgenomes.org/pub/bacteria/release-42/fasta/bacteria_22_collection/escherichia_coli_bl21_gold_de3_plyss_ag_/dna/Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa.gz
 ```
 
-We can use the options "-lh" of the program **ls** to list attributes of the files and show in human readable format the size fo the files
+We can use the options **-lh** of the program **ls** to list attributes of the files and show in human readable format the size fo the files
 
 ```{bash}
 ls -lh
@@ -127,7 +127,7 @@ CCTGATGAAAAAGGCCGACGAAAACGACATTCGTTTGCCGGGCGAAGTGGCGTTCTTTAT
 CGCCAAGCGTCTACGATCTAACGTACGTGAGCTGGAAGGGGCGCTGAACCGCGTCATTGC
 ```
 
-The file contains the whole genome of the bacteria. The first line contains the character **">"** and the name of the molecule / genome. This format is called [**FASTA**](https://en.wikipedia.org/wiki/FASTA_format) format and is universally used for storing one or multiple DNA/RNA/Protein sequences.
+The file contains the whole genome of the bacteria. The first line contains the character **>** and the name of the molecule / genome. This format is called [**FASTA**](https://en.wikipedia.org/wiki/FASTA_format) format and is universally used for storing one or multiple DNA/RNA/Protein sequences.
 
 We can now download in the same ways the proteins:
 
