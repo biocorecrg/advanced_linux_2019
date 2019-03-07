@@ -1,9 +1,6 @@
-theme: minima
+theme: jekyll-theme-architect
 title: CRG - Advanced Linux 2019
 markdown: kramdown
 kramdown:
   parse_block_html: true
 
-header_pages:
-  - README.md
-  - Module1.md
