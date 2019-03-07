@@ -22,7 +22,8 @@ To display the list of files and folder we can use the command **ls**
 
 ```{bash}
 ls
-$ my_beautiful_file.txt  my_beautiful_folder
+
+my_beautiful_file.txt  my_beautiful_folder
 ```
 
 To change the name of a file (or a directory) you can use the command **mv** while for copying the file you can use **cp**. Adding the option **-r** (recursive) to **cp** allows to copy a whole folder and its content. 
@@ -38,7 +39,8 @@ If you omit the **-r** option the system will complain
 
 ```{bash}
 cp my_ugly_folder my_other_folder
-$ cp: omitting directory ‘my_ugly_folder’
+
+cp: omitting directory ‘my_ugly_folder’
 ```
 
 You can use **mv** also for moving a file (or a directory) inside a folder. Also **cp** will allow you to make a copy inside a folder.
@@ -48,7 +50,8 @@ mv my_beautiful_file.txt my_beautiful_folder
 cp my_ugly_file.txt my_ugly_folder
 
 ls
-$ my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
+
+my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
 ```
 
 For entering in a folder we can use the tool **cd**
@@ -57,7 +60,8 @@ For entering in a folder we can use the tool **cd**
 cd my_ugly_folder
 
 ls
-$ my_ugly_file.txt
+
+my_ugly_file.txt
 ```
 
 For going out we can move one level out 
@@ -65,12 +69,44 @@ For going out we can move one level out
 cd ../
 
 ls
-$ my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
+
+my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
 ```
 
 Sometimes we get lost and would like to know where we are. We can use the command **pwd**
 
 <img src="pics/lost.jpg" width="400"/>
+
+We can write to a file using the character **>**, that means output redirection.
+
+```{bash}
+echo "ATGTACTGACTGCATGCATGCCATGCA" > my_dna.txt
+```
+
+And display the content of the file using the program **cat**
+
+```{bash}
+echo "ATGTACTGACTGCATGCATGCCATGCA" > my_dna.txt
+```
+
+We can write to a file using the character **>**, that means output redirection.
+
+```{bash}
+cat my_dna.txt
+
+ATGTACTGACTGCATGCATGCCATGCA
+```
+
+To convert this sequence to a RNA one we can just replace the **T** base with **U** by using the program **sed**. The sintax of this program is the following ```s/<TO BE REPLACED>/<TO REPLACE>```. You can add a **g** at the end if you want to replace every character found.
+
+```{bash}
+
+sed s/T/U/g my_dna.txt > my_rna.txt
+
+cat my_rna.txt
+
+AUGUACUGACUGCAUGCAUGCCAUGCA
+```
 
 Every command has a manual, you can read it by using the program **man** with the name of the tool.
 
