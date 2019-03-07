@@ -73,9 +73,31 @@ The files are consistently named following this pattern:
 --More--(14%)
 ```
 
+After reading the README we can download the file named **toplevel** that contains chromsomes, regions not assembled into chromosomes and N padded haplotype/patch regions
+
+```{bash}
+wget ftp://ftp.ensemblgenomes.org/pub/bacteria/release-42/fasta/bacteria_22_collection/escherichia_coli_bl21_gold_de3_plyss_ag_/dna/Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa.gz
+```
+
+We can use the options "-lh" of the program **ls** to list attributes of the files and show in human readable format the size fo the files
+
+```{bash}
+ls -lh
+
+total 2.0M
+drwxr-xr-x 5 lcozzuto Bioinformatics_Unit  209 Mar  7 11:48 advanced_linux_2019
+-rw-r--r-- 1 lcozzuto Bioinformatics_Unit 1.4M Mar  7 13:06 Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa.gz
+drwxr-xr-x 2 lcozzuto Bioinformatics_Unit   39 Mar  6 18:17 my_beautiful_folder
+-rw-r--r-- 1 lcozzuto Bioinformatics_Unit    0 Mar  6 18:15 my_ugly_file.txt
+drwxr-xr-x 2 lcozzuto Bioinformatics_Unit   34 Mar  6 18:17 my_ugly_folder
+-rw-r--r-- 1 lcozzuto Bioinformatics_Unit 4.9K Mar  6 18:59 README
+```
+
+For unzipping the file we can use the program **gunzip**. The uncompressed file is now **4.5M**. 
+
 
 <a name="module1_pars"></a>
-<h3>Manipulate file, parsing, reformatting</h3>
+<h3>Manipulate files, piping, parsing, reformatting</h3>
 
 <a name="module1_man"></a>
 <h3>Knowing more about a function</h3>
