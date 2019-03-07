@@ -4,7 +4,7 @@
 
 * [Create directory and practice moving around](#module1_dir)
 * [Download files from repositories](https://biocorecrg.github.io/advanced_linux_2019/download)
-* [Manipulate file, parsing, reformatting](#module1_pars)
+* [Manipulate files, piping, parsing, reformatting](https://biocorecrg.github.io/advanced_linux_2019/parsing)
 * [Knowing more about a function](#module1_man)
 * [Regular expressions](#module1_regex)
 * [Fasta, fastq, bed formats](#module1_formats)
