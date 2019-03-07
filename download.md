@@ -95,15 +95,7 @@ drwxr-xr-x 2 lcozzuto Bioinformatics_Unit   34 Mar  6 18:17 my_ugly_folder
 
 For unzipping the file we can use the program **gunzip**. The uncompressed file is now **4.5M**. 
 
+<h3>Next Session</h3>
 
-<a name="module1_pars"></a>
-<h3>Manipulate files, piping, parsing, reformatting</h3>
+[Manipulate files, piping, parsing, reformatting](https://biocorecrg.github.io/advanced_linux_2019/parsing)
 
-<a name="module1_man"></a>
-<h3>Knowing more about a function</h3>
-
-<a name="module1_regex"></a>
-<h3>Regular expressions</h3>
-
-<a name="module1_formats"></a>
-<h3>Fasta, fastq, bed formats</h3>
