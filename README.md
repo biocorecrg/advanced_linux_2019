@@ -1,8 +1,3 @@
----
-layout: template
-title: README
----
-
 # Dates, time & location
 Dates:
 * **Module 1: Monday 19th 2019**
