@@ -3,6 +3,8 @@ Dates:
 * **Module 1: Monday 19th 2019**
 * **Module 2: Monday 21st 2019**
 
+aaa
+
 Time:
 * 09:30-13:30 
 
