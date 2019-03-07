@@ -30,12 +30,11 @@ To be able to:
 
 # Program
 * [**Module one**](https://biocorecrg.github.io/advanced_linux_2019/Module1)
-	* Create directory and practice moving around.
+	* Create directory and practice moving around. Knowing more about a function
 	* Download files from repositories.
 	* Manipulate files, piping, parsing, reformatting.
-	* Knowing more about a function.
+	* Biological file formats: Fasta, fastq, bed formats.
 	* Regular expressions.
-	* Fasta, fastq, bed formats
 
 * [**Module two**](https://biocorecrg.github.io/advanced_linux_2019/Module2)
 	* GTF files
