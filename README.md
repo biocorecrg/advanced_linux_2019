@@ -31,8 +31,8 @@ To be able to:
 # Program
 * [**Module one**](https://biocorecrg.github.io/advanced_linux_2019/Module1)
 	* Create directory and practice moving around.
-	* Download files from repositories. 
-	* Manipulate file, parsing, reformatting.
+	* Download files from repositories.
+	* Manipulate files, piping, parsing, reformatting.
 	* Knowing more about a function.
 	* Regular expressions.
 	* Fasta, fastq, bed formats
