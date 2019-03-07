@@ -1,6 +1,7 @@
 ---
 layout: template
 title: README
+---
 
 # Dates, time & location
 Dates:
