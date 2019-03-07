@@ -2,13 +2,11 @@
 
 <h3>The plan</h3>
 
-* [Create directory and practice moving around](#module1_dir)
+* [Create directory and practice moving around. Knowing more about a function](#module1_dir)
 * [Download files from repositories](https://biocorecrg.github.io/advanced_linux_2019/download)
 * [Manipulate files, piping, parsing, reformatting](https://biocorecrg.github.io/advanced_linux_2019/parsing)
-* [Knowing more about a function](#module1_man)
-* [Regular expressions](#module1_regex)
-* [Fasta, fastq, bed formats](#module1_formats)
-
+* [Biological file formats: Fasta, fastq, bed formats.](https://biocorecrg.github.io/advanced_linux_2019/bioformat)
+* [Regular expressions](https://biocorecrg.github.io/advanced_linux_2019/regex)
 
 <a name="module1_dir"></a>
 <h3>Create directory and practice moving around</h3>
@@ -70,9 +68,41 @@ ls
 $ my_beautiful_folder  my_ugly_file.txt  my_ugly_folder
 ```
 
+Sometimes we get lost and would like to know where we are. We can use the command **pwd**
+
 <img src="pics/lost.jpg" width="400"/>
 
-Sometimes we get lost and would like to know where we are. We can use the command **pwd**
+Every command has a manual, you can read it by using the program **man** with the name of the tool.
+
+```{bash}
+man ls
+
+LS(1)                                                                   User Commands                                                                  LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List information about the FILEs (the current directory by default).  Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+       Mandatory arguments to long options are mandatory for short options too.
+
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       --author
+              with -l, print the author of each file
+
+       -b, --escape
+              print C-style escapes for nongraphic characters
+ Manual page ls(1) line 1 (press h for help or q to quit)
+```
 
 <h3>Next Session</h3>
 
