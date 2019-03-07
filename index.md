@@ -1,3 +1,9 @@
+---
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
+---
+
 # Dates, time & location
 Dates:
 * **Module 1: Monday 19th 2019**
