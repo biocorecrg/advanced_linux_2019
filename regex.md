@@ -206,7 +206,6 @@ awk -F"\t" '{if ($2~"YFAKRLK$") print}' proteins.tab
 
 We see that some of the protein sequences are repeated. So different genes produces the same protein. 
 
-## Excercise
 How many unique proteins we have in our proteins.tab file?
 
 Other useful pattern for the regular expression is the dot **.** that means any charachter.
