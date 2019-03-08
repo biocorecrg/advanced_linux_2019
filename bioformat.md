@@ -1,5 +1,5 @@
 <a name="module1_bioformat"></a>
-<h3>Bed format and regular expressions</h3>
+<h3>Sequence file formats: Fasta and fastq.</h3>
 
 We already showed the fasta format. There is a header characterized by the presence of **>** and a number of rows containing the sequence.
 The format is used for both nucleic acids and proteins.
