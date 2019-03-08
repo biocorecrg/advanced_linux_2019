@@ -204,10 +204,6 @@ awk -F"\t" '{if ($2~"YFAKRLK$") print}' proteins.tab
 >ACT29589 pep supercontig:ASM2366v1:CP001665:2682665:2682964:1 gene:ECBD_2567 transcript:ACT29589 gene_biotype:protein_coding transcript_biotype:protein_coding description:transposase IS3/IS911 family protein	MTKTVSTSKKPRKQHSPEFRSEALKLAERIGVTAAARELSLYESQLYNWRSKQQNQQTSSERELEMSTEIARLKRQLAERDEELAILQKAATYFAKRLK
 ```
 
-We see that some of the protein sequences are repeated. So different genes produces the same protein. 
-
-How many unique proteins we have in our proteins.tab file?
-
 Other useful pattern for the regular expression is the dot **.** that means any charachter.
 
 ```{bash}
@@ -222,5 +218,21 @@ grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa | grep
 GE**AGAAAPAA**KQEAAPAAAPAPAAGVKEVNVPDIGGDEVEVTEVMVKVGDKVAAEQSLIT
 EQQRRMEAERLAQMQQLSHQDDDS**AAAAALAA**QTGERKVGRNDPCPCGSGKKYKQCHGRL
 
+More extended regular expression can be searched by using grep with the parameter **-E**. For instance we can search for repetition:
 
+```{bash}
+grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa | grep -E "(AT){3}"
+```
+GVGIGIETVDGVPVKINNNSGATFVLSDGSNTLLFNTWVQAKSGRDVTLGNFT**ATATAT**F
 
+## Exercises
+
+* We see that some of the protein sequences are repeated in **proteins.tab** file. So different genes produces the same protein. How many unique proteins we have in our proteins.tab file?
+
+* How many sequences in SRR6466185_1.fastq.gz  contains the pattern "GGGATGACGGC"? And how many in SRR6466185_2.fastq.gz? 
+
+* Can you calculate the sum of the size of the first 10 sequences in **proteins.tab**? 
+
+* Can you tell how many different kind of description there are in **seq_names.txt**?
+
+* In Ensembl the chromosomes are named differently than in UCSC (1,2,3... vs chr1, chr2, chr3). Can you convert the binding sites stored within **GSE41589_Suz12_BindingSites.txt.gz** in a way that is compatible with Ensembl? 
