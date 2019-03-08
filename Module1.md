@@ -5,8 +5,8 @@
 * [Create directory and practice moving around. Knowing more about a function](#module1_dir)
 * [Download files from repositories](https://biocorecrg.github.io/advanced_linux_2019/download)
 * [Manipulate files, piping, parsing, reformatting](https://biocorecrg.github.io/advanced_linux_2019/parsing)
-* [Biological file formats: Fasta, fastq, bed formats.](https://biocorecrg.github.io/advanced_linux_2019/bioformat)
-* [Regular expressions](https://biocorecrg.github.io/advanced_linux_2019/regex)
+* [Sequence file formats: Fasta and fastq](https://biocorecrg.github.io/advanced_linux_2019/bioformat)
+* [Bed format and regular expressions](https://biocorecrg.github.io/advanced_linux_2019/regex)
 
 <a name="module1_dir"></a>
 <h3>Create directory and practice moving around</h3>
