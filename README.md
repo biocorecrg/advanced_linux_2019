@@ -33,8 +33,8 @@ To be able to:
 	* Create directory and practice moving around. Knowing more about a function
 	* Download files from repositories.
 	* Manipulate files, piping, parsing, reformatting.
-	* Biological file formats: Fasta, fastq, bed formats.
-	* Regular expressions.
+	* Sequence file formats: Fasta and fastq.
+	* Bed format and regular expressions.
 
 * [**Module two**](https://biocorecrg.github.io/advanced_linux_2019/Module2)
 	* GTF files
