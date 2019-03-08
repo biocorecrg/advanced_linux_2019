@@ -148,6 +148,6 @@ grep -Ff random.list proteins.tab
 
 <h3>Next Session</h3>
 
-[Biological file formats: Fasta, fastq, bed formats.](https://biocorecrg.github.io/advanced_linux_2019/bioformat)
+[Sequence file formats: Fasta and fastq](https://biocorecrg.github.io/advanced_linux_2019/bioformat)
 
 
