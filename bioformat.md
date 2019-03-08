@@ -75,5 +75,10 @@ zcat SRR6466185_1.fastq.gz | wc -l | awk '{print $0/4}'
 32345
 ```
 
+<h3>Next Session</h3>
+
+[Bed format and regular expressions](https://biocorecrg.github.io/advanced_linux_2019/regex)
+
+
 
 
