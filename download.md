@@ -205,6 +205,13 @@ grep ">" -c Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa
 4228
 ```
 
+<h3>Recap</h3>
+
+* **wget** downloads file from a URL
+* **more** prints a part of the content of a file in interactive way
+* **grep** extract the rows containing a particular character / pattern.
+
+
 <h3>Next Session</h3>
 
 [Manipulate files, piping, parsing, reformatting](https://biocorecrg.github.io/advanced_linux_2019/parsing)
