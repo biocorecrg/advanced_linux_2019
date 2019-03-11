@@ -140,6 +140,18 @@ DESCRIPTION
  Manual page ls(1) line 1 (press h for help or q to quit)
 ```
 
+<h3>Recap</h3>
+
+* **touch** writes empty files **mkdir** empty directories
+* **mv** move files (or directory) or change their name
+* **ls** list files and directories
+* **cp** copy files and direcotries
+* **cd** change the directory
+* **echo** print values to standard output
+* **cat** print the content of a file to standard output
+* **sed** replace a string with another
+* **man** print the manual for a function
+
 <h3>Next Session</h3>
 
 [Download files from repositories](https://biocorecrg.github.io/advanced_linux_2019/download)
