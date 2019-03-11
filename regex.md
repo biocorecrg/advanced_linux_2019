@@ -225,6 +225,14 @@ grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa | grep
 ```
 GVGIGIETVDGVPVKINNNSGATFVLSDGSNTLLFNTWVQAKSGRDVTLGNFT**ATATAT**F
 
+
+<h3>Recap</h3>
+
+* **uniq** it removes the duplicated elements in a list
+* **sort** it sorts a given list
+* **shuf** it shuffles a given list
+
+
 ## Exercises
 
 * We see that some of the protein sequences are repeated in **proteins.tab** file. So different genes produces the same protein. How many unique proteins we have in our proteins.tab file?
