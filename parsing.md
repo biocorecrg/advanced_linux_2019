@@ -146,6 +146,14 @@ grep -Ff random.list proteins.tab
 >ACT31118 pep supercontig:ASM2366v1:CP001665:4355734:4355916:-1 gene:ECBD_4135 transcript:ACT31118 gene_biotype:protein_coding transcript_biotype:protein_coding description:hypothetical protein	MGKNDVNQIADNVRVVHAGCGVNALSGLQSRINSMYCSLLVGLISAAHQAILRLSSVSCP
 ```
 
+
+<h3>Recap</h3>
+
+* **cut** extract the indicated column 
+* **awk** allows several kind of parsing operations
+* **head** extract the indicated number of rows from the beginning of a file
+
+
 <h3>Next Session</h3>
 
 [Sequence file formats: Fasta and fastq](https://biocorecrg.github.io/advanced_linux_2019/bioformat)
