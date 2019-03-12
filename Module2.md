@@ -13,6 +13,11 @@
 <a name="module2_tab"></a>
 <h3>Tabular files</h3>
 
+A general tabular file (or tab separated text) is a table which columnes are separated by the character **\t**. A easy way to obtain this format is exporting a spreadsheet (like the excel file) in TSV.
+
+<img src="images/exporting_excel.png" width="800"/>
+
+You can download that file here <a href="my_expression.txt.zip">Download File</a>
 
 
 <a name="module2_gtf"></a>
