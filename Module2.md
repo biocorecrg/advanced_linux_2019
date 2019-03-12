@@ -3,12 +3,9 @@
 <h3>The plan</h3>
 
 * [Tabular files](#module2_tab)
-* [GTF files](#module2_gtf)
-* [Space in volumes](#module2_space)
-* [Permissions](#module2_perm)
-* [Variables](#module2_var)
-* ["For" Loops](#module2_loops)
-* [Introduction to VIM text editor](#module2_vim)
+* [GTF files](https://biocorecrg.github.io/advanced_linux_2019/gtf_format)
+* [Space in volumes and permissions](https://biocorecrg.github.io/advanced_linux_2019/space_perm)
+* [Variables and "For" Loops](https://biocorecrg.github.io/advanced_linux_2019/var_for)
 
 <a name="module2_tab"></a>
 <h3>Tabular files</h3>
@@ -38,88 +35,69 @@ ENSMUSG00000063659.11	2505.765754	-3.799372346	0.134497081	-28.2487347	1.4752E-1
 
 ```
 
-<a name="module2_gtf"></a>
-<h3>GTF files</h3>
+<h4>Exercise<h4>
+Based on on your knowledge can you tell how many genes has this table?
 
-The **G**eneral **T**ransfer **F**ormat (GTF) format contains annotation of features and consists of one line per feature, each containing 9 columns of data.
-<br>
-GTF files can be downloaded for example from ENSEMBL, where each correspond to a specific version/update of the annotation.<br>
-The annotation from the latest version of the annotation is in the [ENSEMBL main page](http://www.ensembl.org/Homo_sapiens/Info/Index) (for *Homo sapiens*).
-<br>
-Previous versions of the annotation are found in the [archives](http://www.ensembl.org/Homo_sapiens/Info/Index).
-
-* Download the GTF file in ENSEMBL release 94 for *Homo sapiens*:
+Let's try now to select the genes with a **log2FoldChange** that are up-regulated.
 
 ```{bash}
-# -o: name of the output file
-curl -o Homo_sapiens.GRCh38.94.chr.gtf.gz ftp://ftp.ensembl.org/pub/release-94/gtf/homo_sapiens/Homo_sapiens.GRCh38.94.chr.gtf.gz
+awk '{if ($3>=2) print $0}' my_expression.txt |head -n 5
+
+ids	baseMean	log2FoldChange	lfcSE	stat	pvalue	padj	gene.name	gene.type
+ENSMUSG00000041272.11	692.0809888	2.853351422	0.173751262	16.4220472	1.33003E-60	1.57786E-58	Tox	protein_coding
+ENSMUSG00000051177.16	336.7060978	2.671611253	0.176307092	15.15316949	7.21991E-52	6.76016E-50	Plcb1	protein_coding
+ENSMUSG00000063415.12	2250.241249	3.41532392	0.22558106	15.14011824	8.80552E-52	8.21088E-50	Cyp26b1	protein_coding
+ENSMUSG00000106795.1	170.0185428	2.898178587	0.19589793	14.79432982	1.59364E-49	1.40507E-47	RP24-150D8.2	lincRNA
 ```
 
-The name of the ENSEMBL gtf file is composed of:
-* <species>: The systematic name of the species. (here, Homo_sapiens)
-* <assembly>: The assembly build name. (here, GRCh38)
-* <version>: The version of Ensembl from which the data was exported. (here, 94)
+<h4>Exercise<h4>
+Can you tell how many genes are up-regulated?
 
-* Let's check the file:
-	* No need to uncompress the file: **zcat** allows to view the content of a compressed file without actually uncompressing it !
+Now let's try to extract the up and down-regulated. I'm using shuf just to show you that both the up and down regulated are both there. We will use the charachters **||** that means **OR**
 
 ```{bash}
-# Display the first 10 rows
-zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | head
-# Check number of rows
-zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | wc -l
-# Browse the whole file
-zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | less
+[lcozzuto@ant-login5 home]$ awk '{if ($3>=2 || $3<=-2) print $0}' my_expression.txt |shuf | head -n 6 
+ENSMUSG00000057777.4	2264.035736	2.81870418	0.30180407	9.339516784	9.67748E-21	2.38091E-19	Mab21l2	protein_coding
+ENSMUSG00000028838.11	186.4738697	3.633200922	0.647669945	5.609648789	2.02738E-08	1.52771E-07	Extl1	protein_coding
+ENSMUSG00000064115.13	383.3757202	2.471663969	0.264982674	9.327643683	1.08251E-20	2.6546E-19	Cadm2	protein_coding
+ENSMUSG00000025278.9	13010.44773	2.314262167	0.306197486	7.55807045	4.09092E-14	5.91175E-13	Flnb	protein_coding
+ENSMUSG00000029384.5	3.863476129	-2.243196229	0.684465108	-3.277298146	0.001048056	0.003710611	AC134827.3	protein_coding
+ENSMUSG00000071392.6	37.23725709	-4.98355982	0.541679915	-9.200193106	3.57307E-20	8.4866E-19	Ect2l	protein_coding
 ```
 
-* Fields:
+Sometimes you want to add more filters to be more stringent. In that case you can use the charachters **&&** that indicates **AND**. In this case we ask for both **log2FoldChange** >= 2 and **padj** <= 0.0001
 
-| Column number | Column name | Details |
-| :----: | :----: | :----: |
-| 1 | seqname | name of the chromosome or scaffold; chromosome names can be given with or without the 'chr' prefix. |
-| 2 | source | name of the program that generated this feature, or the data source (database or project name) |
-| 3 | feature | feature type name, e.g. Gene, Variation, Similarity |
-| 4 | start | Start position of the feature, with sequence numbering starting at 1. |
-| 5 | end | End position of the feature, with sequence numbering starting at 1. |
-| 6 | score | A floating point value. |
-| 7 | strand | defined as + (forward) or - (reverse). |
-| 8 | frame | One of '0', '1' or '2'. '0' indicates that the first base of the feature is the first base of a codon, '1' that the second base is the first base of a codon, and so on.. |
-| 9 | attribute | A semicolon-separated list of tag-value pairs, providing additional information about each feature. |
-
-* Check chromosome names
 ```{bash}
-# Remove rows starting with "#": grep (-v keeps only what doesn't match)
-# Retrieve the first column only: cut (-f to specify the field)
-# Keep the unique occurences in column 1: uniq
-zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | grep -v "#" | cut -f1 | uniq
+awk '{if ($3>=2 && $6<=0.0001) print $0}' my_expression.txt | head -n 3
+
+ENSMUSG00000041272.11	692.0809888	2.853351422	0.173751262	16.4220472	1.33003E-60	1.57786E-58	Tox	protein_coding
+ENSMUSG00000051177.16	336.7060978	2.671611253	0.176307092	15.15316949	7.21991E-52	6.76016E-50	Plcb1	protein_coding
+ENSMUSG00000063415.12	2250.241249	3.41532392	0.22558106	15.14011824	8.80552E-52	8.21088E-50	Cyp26b1	protein_coding
 ```
 
-* How many gene features are present in this file ?
+As you can see this combination removes the header. If you want to have it back you can add another **IF** before the current one.
+
 ```{bash}
-zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | awk '$3=="gene"' | wc -l
+awk '{if ($1=="ids") {print $0} else if ($3>=2 && $6<=0.0001) print $0}' my_expression.txt | head -n 5
+
+ids	baseMean	log2FoldChange	lfcSE	stat	pvalue	padj	gene.name	gene.type
+ENSMUSG00000041272.11	692.0809888	2.853351422	0.173751262	16.4220472	1.33003E-60	1.57786E-58	Tox	protein_coding
+ENSMUSG00000051177.16	336.7060978	2.671611253	0.176307092	15.15316949	7.21991E-52	6.76016E-50	Plcb1	protein_coding
+ENSMUSG00000063415.12	2250.241249	3.41532392	0.22558106	15.14011824	8.80552E-52	8.21088E-50	Cyp26b1	protein_coding
+ENSMUSG00000106795.1	170.0185428	2.898178587	0.19589793	14.79432982	1.59364E-49	1.40507E-47	RP24-150D8.2	lincRNA
 ```
 
-* Extract gene names:
+You can redirect the output of **AWK** to one or more files. So in one row you can extract the genes up and down regulated and send them to two different files
+
 ```{bash}
-zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | awk '$3=="gene" {print $10}' | sed 's/"//g' | sed 's/;//g' > gene_names_Homo_sapiens.GRCh38.94.txt
+awk '{if ($3>=2) print $0 > "up_reg.txt"; if ($3<=-2) print $0 > "down_reg.txt" }' my_expression.txt
 ```
 
-* Create a BED file out of the genes from the GTF:
-```{bash}
-zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | awk '$3=="gene" {print $1"\t"$4"\t"$5"\t.\t.\t"$7}' | sed 's/"//g' | sed 's/;//g' > genes_Homo_sapiens.GRCh38.94.bed
-```
+Careful that in this way the up_reg.txt will contain the header and the down_reg.txt not. 
 
-<a name="module2_space"></a>
-<h3>Space in volumes</h3>
 
-<a name="module2_perm"></a>
-<h3>Permissions</h3>
+<h3>Next Session</h3>
 
-<a name="module2_var"></a>
-<h3>Variables</h3>
+[Gtf file format](https://biocorecrg.github.io/advanced_linux_2019/gtf_format)
 
-<a name="module2_loops"></a>
-<h3>"For" loops</h3>
 
-<a name="module2_vim"></a>
-<h3>VIM text editor</h3>
