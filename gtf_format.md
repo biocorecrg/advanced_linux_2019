@@ -225,7 +225,7 @@ So you can add to the previous example the code ```sed s/\"//g``` to remove the 
 ```
 
 * Create a BED file out of the genes from the GTF. **TIPS** awk allows you to change the column order! 
-** Solution **
+**Solution**
 
 ```{bash}
 zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | awk '$3=="gene" {OFS="\t"; print $1,$4,$5,".",$10,$7}' | sed s/\"//g|sed s/\;//g|head
