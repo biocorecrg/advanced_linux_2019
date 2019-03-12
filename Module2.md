@@ -17,8 +17,26 @@ A general tabular file (or tab separated text) is a table which columnes are sep
 
 <img src="images/exporting_excel.png" width="800"/>
 
-You can download that file here <a href="my_expression.txt.zip">Download File</a>
+You can download that file here <a href="my_expression.txt.zip">Download File</a> or via command line:
 
+```{bash}
+wget https://biocorecrg.github.io/advanced_linux_2019/my_expression.txt.zip
+
+unzip my_expression.txt.zip 
+
+more my_expression.txt
+
+ids	baseMean	log2FoldChange	lfcSE	stat	pvalue	padj	gene.name	gene.type
+ENSMUSG00000027009.18	6367.702449	-5.403229286	0.164511219	-32.84413864	1.3811E-236	3.1294E-232	Itga4	protein_coding
+ENSMUSG00000030730.12	6085.911781	-6.880702974	0.224575305	-30.63873367	3.7337E-206	4.2301E-202	Atp2a1	protein_coding
+ENSMUSG00000020393.16	3811.600859	-3.392964274	0.113074912	-30.00634011	8.1118E-198	6.1268E-194	Kremen1	protein_coding
+ENSMUSG00000031962.6	5177.660551	-6.5722255	0.224972968	-29.21340091	1.3105E-187	7.4238E-184	Cdh15	protein_coding
+ENSMUSG00000034648.9	7607.79254	-5.034267672	0.17328645	-29.05170986	1.4641E-185	6.6352E-182	Lrrn1	protein_coding
+ENSMUSG00000049641.14	901.8440812	-7.022597773	0.246253844	-28.51771841	7.0643E-179	2.6678E-175	Vgll2	protein_coding
+ENSMUSG00000050315.13	877.4673602	-4.465899309	0.157998266	-28.26549573	9.1813E-176	2.972E-172	Synpo2	protein_coding
+ENSMUSG00000063659.11	2505.765754	-3.799372346	0.134497081	-28.2487347	1.4752E-175	4.1783E-172	Zbtb18	protein_coding
+
+```
 
 <a name="module2_gtf"></a>
 <h3>GTF files</h3>
