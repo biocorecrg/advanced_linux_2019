@@ -243,7 +243,6 @@ GVGIGIETVDGVPVKINNNSGATFVLSDGSNTLLFNTWVQAKSGRDVTLGNFT**ATATAT**F
 * **sort** it sorts a given list
 * **shuf** it shuffles a given list
 
-
 ## Exercises
 
 * We see that some of the protein sequences are repeated in **proteins.tab** file. So different genes produces the same protein. How many unique proteins we have in our proteins.tab file?
@@ -255,3 +254,8 @@ GVGIGIETVDGVPVKINNNSGATFVLSDGSNTLLFNTWVQAKSGRDVTLGNFT**ATATAT**F
 * Can you tell how many different kind of description there are in **seq_names.txt**?
 
 * In Ensembl the chromosomes are named differently than in UCSC (1,2,3... vs chr1, chr2, chr3). Can you convert the binding sites stored within **GSE41589_Suz12_BindingSites.txt.gz** in a way that is compatible with Ensembl? 
+
+<h3>Next Session</h3>
+
+[Module 2](https://biocorecrg.github.io/advanced_linux_2019/Module2)
+
