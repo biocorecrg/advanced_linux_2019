@@ -50,7 +50,7 @@ ENSMUSG00000063415.12	2250.241249	3.41532392	0.22558106	15.14011824	8.80552E-52	
 ENSMUSG00000106795.1	170.0185428	2.898178587	0.19589793	14.79432982	1.59364E-49	1.40507E-47	RP24-150D8.2	lincRNA
 ```
 
-<h4>Exercise<h4>
+<h4>Exercise</h4>
 Can you tell how many genes are up-regulated?
 
 Now let's try to extract the up and down-regulated. I'm using shuf just to show you that both the up and down regulated are both there. We will use the charachters **||** that means **OR**
