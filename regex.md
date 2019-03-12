@@ -4,13 +4,24 @@
 The BED format is a "tab" separated text file. It consists of one line per feature, each containing 3-12 columns of data.
 It is used for indicating genomic locations as the one of exons, binding sites, regulatory elements, etc.
 
+Typical 6-fields bed format
 
-|chrom|chromStart|chromEnd|name|score|strand|thickStart|thickStart|itemRgb|blockCount|blockSizes|blockStarts|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|chr7|127471196|127472363|Pos1|0|+|127471196|127472363|255,0,0||||
-|chr7|127472363|127473530|Pos2|0|+|127472363|127473530|255,0,0||||
-|chr7|127473530|127474697|Pos3|0|+|127473530|127474697|255,0,0||||
-|chr7|127474697|127475864|Pos4|0|+|127474697|127475864|255,0,0||||
+|chrom|chromStart|chromEnd|name|score|strand|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|chr7|127471196|127472363|Pos1|0|+|
+|chr7|127472363|127473530|Pos2|0|+|
+|chr7|127473530|127474697|Pos3|0|+|
+|chr7|127474697|127475864|Pos4|0|+|
+
+Additionally you may have up to 6 more fields:
+
+|thickStart|thickStart|itemRgb|blockCount|blockSizes|blockStarts|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|127471196|127472363|255,0,0|0|0|0|
+|127472363|127473530|255,0,0|0|0|0|
+|127473530|127474697|255,0,0|0|0|0|
+|127474697|127475864|255,0,0|0|0|0|
+
 
 This kind of file can be fed to a genome browser like [**UCSC genome browser**](https://genome-euro.ucsc.edu/cgi-bin/hgGateway?redirect=manual&source=genome.ucsc.edu) to highlight the genomic positions. Here an example about our coordinates:
 
