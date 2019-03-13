@@ -35,7 +35,7 @@ ENSMUSG00000063659.11	2505.765754	-3.799372346	0.134497081	-28.2487347	1.4752E-1
 
 ```
 
-<h4>Exercise<h4>
+<h4>Exercise</h4>
 Based on on your knowledge can you tell how many genes has this table?
 
 Let's try now to select the genes with a **log2FoldChange** that are up-regulated.
