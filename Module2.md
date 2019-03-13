@@ -53,7 +53,7 @@ ENSMUSG00000106795.1	170.0185428	2.898178587	0.19589793	14.79432982	1.59364E-49	
 <h4>Exercise</h4>
 Can you tell how many genes are up-regulated?
 
-Now let's try to extract the up and down-regulated. I'm using shuf just to show you that both the up and down regulated are both there. We will use the charachters **||** that means **OR**
+Now let's try to extract the up and down-regulated. I'm using shuf just to show you that both the up and down regulated are both there. We will use the characters **||** that means **OR**
 
 ```{bash}
 [lcozzuto@ant-login5 home]$ awk '{if ($3>=2 || $3<=-2) print $0}' my_expression.txt |shuf | head -n 6 
