@@ -90,8 +90,10 @@ A few built-in variables exist:
 <h3>"For" loops</h3>
 
 **For loop** are used to repeat certain tasks.
+<br>
+The basic syntax is:
 
-<img src="images/forloop.png" width="300"/>
+<img src="images/forloop.png" width="200"/>
 
 * At each **iteration** (repetition) of the loop, VARIABLE will be assigned a value from RANGE, sequentially:
 
