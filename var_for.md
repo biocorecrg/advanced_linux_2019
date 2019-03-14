@@ -91,7 +91,7 @@ A few built-in variables exist:
 
 **For loop** are used to repeat certain tasks.
 
-<img src="images/forloop.png" width="500"/>
+<img src="images/forloop.png" width="300"/>
 
 * At each **iteration** (repetition) of the loop, VARIABLE will be assigned a value from RANGE, sequentially:
 
