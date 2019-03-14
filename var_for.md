@@ -48,8 +48,8 @@ echo $mylist
 ```
 
 * Using quotes:
-  + **single quotes ''** treat each character literally.
-  + **double quotes ""** can access the content of variables.
+  + **single quotes ' '** treat each character literally.
+  + **double quotes " "** can access the content of variables.
 
 ```{bash}
 # create one variable:
@@ -87,19 +87,25 @@ A few built-in variables exist:
 | $HOSTNAME | the hostname of the machine you are currently connected to |
 | $RANDOM | a different random number each time it is accessed |
 
-
-
-```{bash}
-```
-
-```{bash}
-```
-
-```{bash}
-```
-
-
 <h3>"For" loops</h3>
+
+**For loop** are used to repeat certain tasks.
+
+```{bash}
+for VARIABLE in 1 2 3 4 5 .. N
+do
+	command1
+	command2
+	commandN
+done
+```
+
+```{bash}
+```
+
+```{bash}
+```
+
 
 
 [Back to the home page](https://biocorecrg.github.io/advanced_linux_2019)
