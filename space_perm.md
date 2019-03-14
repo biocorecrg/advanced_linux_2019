@@ -58,11 +58,13 @@ tmpfs                                    63G     0   63G   0% /dev/shm
 <h3>Permissions</h3>
 
 Create a small file:
+
 ```{bash}
 echo "my file" > test.txt
 ```
 
-Each file has particular permissions that restrict their access to the users. <br>
+* Each file has particular permissions that restrict their access to the users. <br>
+
 **ls -l** shows those permissions:
 
 ```{bash}
@@ -71,30 +73,31 @@ ls -l test.txt
 ```
 Here is the owner is **sbonnin** and the group it belongs to is **Bioinformatics_Unit**.<br>
 
-The first field contains 10 sub-strings:
-* 1: 
-	* **d**: directory
-	* **-**: regular file
-	* **l**: symbolic link (1 field). 
-* 2-4: permissions of the **owner** (3 fields)
-* 5-7: permissions of the **group** (3 fields)
-* 8-10: permissions of **any other user** (3 fields)
+The first field here contains **10 ticks**:
+
+* tick 1: 
+  + **d**: directory
+  + **-**: regular file
+  + **l**: symbolic link (1 field). 
+* ticks 2-4: permissions of the **owner** (3 fields)
+* ticks 5-7: permissions of the **group** (3 fields)
+* ticks 8-10: permissions of **any other user** (3 fields)
 
 |Owner|Group|Any user|
 | :---:  | :---:  | :---:  |
-|rw-|r--|r--|
+| rw- | r-- | r-- |
 
-What kind of permissions ?
-* **r**: read
-* **w**: write
-* **x**: execute
+* What kind of permissions are we talking about?
+	* **r**: read
+	* **w**: write
+	* **x**: execute
 
-In the latter example:
-* **sbonnin** can **read** and **wrote** the file, but NOT execute it.
-* Members of **Bioinformatics_Unit** can only **read** the file.
-* All other users can only **read** the file.
+* In the latter example:
+  + **sbonnin** can **read** and **wrote** the file, but NOT execute it.
+  + Members of **Bioinformatics_Unit** can only **read** the file.
+  + All other users can only **read** the file.
 
-**chmod** controls the changes of permissions the following way:
+* **chmod** controls the changes of permissions:
 
 ```
 chmod [who][+,-,=][permissions] filename
@@ -138,7 +141,7 @@ chmod og-rw test.txt
 -rw------- 1 sbonnin Bioinformatics_Unit 5 Mar 14 16:29 test.txt
 ```
 
-Preserve the file from any modification **even by yourself** using **a** (= all):
+* Preserve the file from any modification **even by yourself** using **a** (= all):
 
 ```{bash}
 chmod a-w test.txt 
@@ -156,7 +159,7 @@ rm test.txt
 rm: remove write-protected regular file ‘test.txt’?
 ```
 
-Control whether a file or folder is **executable**:
+* Control whether a file or folder is **executable**:
 
 ```{bash}
 chmod -x my_ugly_folder/
@@ -176,6 +179,7 @@ chmod -R +x my_ugly_folder/
 
 <h4>Use binary or octal notation for file permissions</h4>
 
+<br>
 Each tick in the first field refers to:
 * a type of permission: read, write, execute.
 * a user type: owner, group, all others.
@@ -195,13 +199,17 @@ Hence, each **octal** number represents a set of permissions:
 | 110 |	6 | rw- |
 | 111 |	7 | rwx |
 
-Set the permissions so that:
-* the owner can: read, write and execute.
-* the group can: read and write.
-* the other users don't have any permission.
+<br>
+* Set the permissions so that:
+  + the owner can: read, write and execute.
+  + the group can: read and write.
+  + the other users don't have any permission.
 
 ```{bash}
 chmod 760 test.txt
+# 7 for the owner
+# 6 for the group
+# 0 for other users
 ```
 
 
