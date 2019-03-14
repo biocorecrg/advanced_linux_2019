@@ -91,21 +91,40 @@ A few built-in variables exist:
 
 **For loop** are used to repeat certain tasks.
 
+<img src="images/forloop.png" width="500"/>
+
+* At each **iteration** (repetition) of the loop, VARIABLE will be assigned a value from RANGE, sequentially:
+
 ```{bash}
-for VARIABLE in 1 2 3 4 5 .. N
+# at the first iteration, 1 is assigned to "i"
+# at the second iteration, 2 is assigned to "i"
+# etc. 
+for i in 1 2 3 4 5
 do
-	command1
-	command2
-	commandN
+	echo $i
 done
 ```
 
-```{bash}
-```
+* Use a for loop to check the number of rows of all text files in a folder:
 
 ```{bash}
+for i in *txt
+do 
+	echo $i
+	wc -l $i
+done
 ```
 
+* Use a for loop to change the extension of files:
+
+```{bash}
+for i in *txt
+do 
+        echo $i
+	newname=`echo $i | sed 's/txt/tab/g'`
+        mv $i $newname
+done
+```
 
 
 [Back to the home page](https://biocorecrg.github.io/advanced_linux_2019)
