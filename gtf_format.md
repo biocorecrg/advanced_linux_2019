@@ -15,16 +15,15 @@ Previous versions of the annotation are found in the [archives](https://www.ense
 <img src="images/ensembl_archive.png" width="800"/>
 
 The name of the ENSEMBL gtf file is composed of:
-* <species>: The systematic name of the species. (here, Homo_sapiens)
-* <assembly>: The assembly build name. (here, GRCh38)
-* <version>: The version of Ensembl from which the data was exported. (here, 94)
+* \<species\>: The systematic name of the species. (here, Homo_sapiens)
+* \<assembly\>: The assembly build name. (here, GRCh38)
+* \<version\>: The version of Ensembl from which the data was exported. (here, 94)
 
 <img src="images/ensembl_gtf.png" width="600"/>
 
 We can use this time the tool **curl** and the option **-o** for indicating the output file name.
 
 ```{bash}
-
 curl -o Homo_sapiens.GRCh38.94.chr.gtf.gz ftp://ftp.ensembl.org/pub/release-94/gtf/homo_sapiens/Homo_sapiens.GRCh38.94.chr.gtf.gz
 
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -49,7 +48,7 @@ zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | head
 1	havana	exon	13221	14409	.	+	.	gene_id "ENSG00000223972"; gene_version "5"; transcript_id "ENST00000456328"; transcript_version "2"; exon_number "3"; gene_name "DDX11L1"; gene_source "havana"; gene_biotype "transcribed_unprocessed_pseudogene"; transcript_name "DDX11L1-202"; transcript_source "havana"; transcript_biotype "processed_transcript"; exon_id "ENSE00002312635"; exon_version "1"; tag "basic"; transcript_support_level "1";
 ```
 
-The file is quite big. In general it has a header indicated by the first character **"#"** and one row per feature composed by 9 columnes:
+The file is quite big. In general it has a header indicated by the first character **"#"** and one row per feature composed by 9 columns:
 
 | Column number | Column name | Details |
 | :----: | :----: | :----: |
@@ -86,7 +85,7 @@ Try to calculate the total number of each features. The result should be the fol
  206534 transcript
 ```
 
-Now let's focus on genes. We see in the description the following annotations:gene_id, gene_version, gene_name, gene_source and gene_biotype.
+Now let's focus on genes. We see in the description the following annotations: gene_id, gene_version, gene_name, gene_source and gene_biotype.
 
 ```{bash}
 zcat Homo_sapiens.GRCh38.94.chr.gtf.gz| awk '{if ($3=="gene") print}'| head -n 5
@@ -239,7 +238,7 @@ zcat Homo_sapiens.GRCh38.94.chr.gtf.gz | awk '$3=="gene" {OFS="\t"; print $1,$4,
 1	52473	53312	.	ENSG00000268020	+
 1	57598	64116	.	ENSG00000240361	+
 1	65419	71585	.	ENSG00000186092	+
-1	89295	133723	.	ENSG00000238009	-```
+1	89295	133723	.	ENSG00000238009	-
 ```
 
 
