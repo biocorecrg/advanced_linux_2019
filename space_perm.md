@@ -168,6 +168,42 @@ cd my_ugly_folder/
 
 * A user that don't have the **executing** rights can't access the directory !
 
+* Apply permission changes **recursively**, i.e. to all files inside a directory:
+
+```{bash}
+chmod -R +x my_ugly_folder/
+```
+
+<h4>Use binary or octal notation for file permissions</h4>
+
+Each tick in the first field refers to:
+* a type of permission: read, write, execute.
+* a user type: owner, group, all others.
+
+Each tick can be replaced by **0** (does not have that permission) or **1** (has that permission): this creates a **binary** number at each **user type**, that can be converted into an **octal** number.<br>
+
+Hence, each **octal** number represents a set of permissions:
+
+| Binary | Octal | Permission |
+| :----: | :----: | :----: |
+| 000 |	0 | --- |
+| 001 |	1 | --x |
+| 010 |	2 | -w- |
+| 011 |	3 | -wx |
+| 100 |	4 | r-- |
+| 101 |	5 | r-x |
+| 110 |	6 | rw- |
+| 111 |	7 | rwx |
+
+Set the permissions so that:
+* the owner can: read, write and execute.
+* the group can: read and write.
+* the other users don't have any permission.
+
+```{bash}
+chmod 760 test.txt
+```
+
 
 <h3>Next Session</h3>
 
