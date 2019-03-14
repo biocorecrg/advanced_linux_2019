@@ -8,14 +8,18 @@ When we deal with analyzing valuable data we should consider different problems:
 * Corrupting / deleting files
 
 Check the size of a file with :
-* **ls -lh **: **l**: list; **h**: human readable.
+* **ls -lh**: 
+	* **l**: list.
+	* **h**: human readable.
 
 ```{bash}
 ls -lh Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa 
 ```
 
 Check the size of a folder with:
-* **du -sh**: **s**: summarize; **h**: human readable.
+* **du -sh**: 
+	* **s**: summarize.
+	* **h**: human readable.
 
 **du** gives an estimate of the file space usage.
 
@@ -29,16 +33,17 @@ du -sh
 ```
 
 Reduce the space by:
-* Compressing files.
-* Using programs as **zcat** or **gunzip -c** to extract information of zipped files on the fly instead of extracting the data.
-* create **symbolic links** instead of copying files and folders.
+	* Compressing files.
+	* Using programs as **zcat** or **gunzip -c** to extract information of zipped files on the fly instead of extracting the data.
+	* Creating **symbolic links** instead of copying files and folders.
 
 ```{bash}
 zcat SRR6466185_1.fastq.gz | head
 ```
 
 Know the available space in the system (file system disk space usage):
-* **df -h**. **h**: human readable
+* **df -h**. 
+	* **h**: human readable.
 
 ```{bash}
 df -h
@@ -64,10 +69,13 @@ Each file has particular permissions that restrict their access to the users. <b
 ls -l test.txt
 -rw-r--r-- 1 sbonnin Bioinformatics_Unit 5 Mar 14 16:29 test.txt
 ```
-Here is the owner is **lcozzuto** and the group it belongs to is **Bioinformatics_Unit**.<br>
+Here is the owner is **sbonnin** and the group it belongs to is **Bioinformatics_Unit**.<br>
 
 The first field contains 10 sub-strings:
-* 1: **d**: directory; **-**: regular file; **l**: symbolic link (1 field). 
+* 1: 
+	* **d**: directory
+	* **-**: regular file
+	* **l**: symbolic link (1 field). 
 * 2-4: permissions of the **owner** (3 fields)
 * 5-7: permissions of the **group** (3 fields)
 * 8-10: permissions of **any other user** (3 fields)
@@ -86,12 +94,12 @@ In the latter example:
 * Members of **Bioinformatics_Unit** can only **read** the file.
 * All other users can only **read** the file.
 
-**chmod** controls the changes of permission:
+**chmod** controls the changes of permissions the following way:
 
-chmod [who][+,-,=][permissions] filename
+**chmod [who][+,-,=][permissions] filename**
 
 
-* Add **writing** permission to the **group**:
+* Add **writing** permissions to the **group**:
 
 ```{bash}
 chmod g+w test.txt
@@ -101,7 +109,7 @@ ls -l test.txt
 -rw-rw-r-- 1 sbonnin Bioinformatics_Unit 5 Mar 14 16:29 test.txt
 ```
 
-* Add **writing** permission to the **all other users**:
+* Add **writing** permissions to the **all other users**:
 
 ```{bash}
 chmod o+w test.txt 
