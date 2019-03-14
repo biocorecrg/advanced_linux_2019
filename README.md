@@ -1,7 +1,7 @@
 # Dates, time & location
 
 Dates:
-* **Module 1: Tursday 19th of March 2019**
+* **Module 1: Tuesday 19th of March 2019**
 * **Module 2: Thursday 21rst of March 2019**
 
 Time:
