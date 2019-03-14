@@ -86,18 +86,13 @@ echo "ATGTACTGACTGCATGCATGCCATGCA" > my_dna.txt
 And display the content of the file using the program **cat**
 
 ```{bash}
-echo "ATGTACTGACTGCATGCATGCCATGCA" > my_dna.txt
-```
-
-We can write to a file using the character **>**, that means output redirection.
-
-```{bash}
 cat my_dna.txt
 
 ATGTACTGACTGCATGCATGCCATGCA
 ```
 
-To convert this sequence to a RNA one we can just replace the **T** base with **U** by using the program **sed**. The sintax of this program is the following ```s/<TO BE REPLACED>/<TO REPLACE>```. You can add a **g** at the end if you want to replace every character found.
+To convert this sequence to a RNA one we can just replace the **T** base with **U** by using the program **sed**. The sintax of this program is the following ```s/<TO BE REPLACED>/<TO REPLACE>/```.
+<br>You can add a **g** at the end if you want to replace every character found ```s/<TO BE REPLACED>/<TO REPLACE>/g```.
 
 ```{bash}
 

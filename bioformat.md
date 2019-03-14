@@ -15,14 +15,14 @@ The format contains four rows for sequence with a header containing **@** as the
 
 <img src="images/phred_quality.png" width="400"/>
 
-Currently most of the journals required the submissions of NGS data in a public repository for a pubblication. 
+Currently most of the journals require the submissions of NGS data in a public repository upon publishing.
 
 The major repositories are:
 * [**SRA**](https://www.ncbi.nlm.nih.gov/sra) (Sequence Read Archive) from US
 * [**ENA**](https://www.ebi.ac.uk/ena) (European Nucleotide Archive) 
 * [**DDBJ-DRA**](https://www.ddbj.nig.ac.jp/dra/index-e.html) from Japan.
 
-They are interconneted and mirror the data among them and are connected to other databases that contains also the results of a given analysis such as [**GEO**](https://www.ncbi.nlm.nih.gov/geo/) and [**Array-express**](https://www.ebi.ac.uk/arrayexpress/) that contain expression data.
+They are interconnected and mirror the data among them and are connected to other databases that contain also the results of a given analysis such as [**GEO**](https://www.ncbi.nlm.nih.gov/geo/) and [**Array-express**](https://www.ebi.ac.uk/arrayexpress/) that contain expression data.
 
 As an example we can have a look at this paper about the [**characterization of the oral microbiome of young Spaniards**](https://www.ncbi.nlm.nih.gov/pubmed/30522523) (in which we were collaborators :) )
 
@@ -44,9 +44,11 @@ We can send now the whole list to **Send results to Run selector**.
 
 <img src="images/run_selector.png" width="800"/>
 
-Now we can select the samples of interest and download the meta-data or the accession list. The accession list is needed for the download using **fastq-dump** a program that is mandatory for this kind of database.
+Now we can select the samples of interest and download the meta-data or the accession list. <br>
+The accession list is needed for the download using **fastq-dump** a program that is mandatory for this kind of database.
 
-Let's try to download the first sample with the access **SRR6466185**. We need to indicate to the program that the data are from a paired end experiment, so they need to be written in separate files (option **--split-files**), and we want the to be compressed to avoid to waste disk space (option **--gzip**).
+Let's try to download the first sample with the access **SRR6466185**. <br>
+We need to indicate to the program that the data are from a paired end experiment, so they need to be written in separate files (option **--split-files**), and we want the to be compressed to avoid to waste disk space (option **--gzip**).
 
 ```{bash}
 fastq-dump --gzip --split-files SRR6466185

@@ -10,7 +10,8 @@
 <a name="module2_tab"></a>
 <h3>Tabular files</h3>
 
-A general tabular file (or tab separated text) is a table which columnes are separated by the character **\t**. A easy way to obtain this format is exporting a spreadsheet (like the excel file) in TSV.
+A general tabular file (or tab separated text) is a table which columns are separated by the character **\t**. <br>
+An easy way to obtain this format is to export a spreadsheet (like the excel file) in TSV.
 
 <img src="images/exporting_excel.png" width="800"/>
 
@@ -36,7 +37,7 @@ ENSMUSG00000063659.11	2505.765754	-3.799372346	0.134497081	-28.2487347	1.4752E-1
 ```
 
 <h4>Exercise</h4>
-Based on on your knowledge can you tell how many genes has this table?
+Based on your knowledge can you tell how many genes this table has?
 
 Let's try now to select the genes with a **log2FoldChange** that are up-regulated.
 
@@ -53,10 +54,12 @@ ENSMUSG00000106795.1	170.0185428	2.898178587	0.19589793	14.79432982	1.59364E-49	
 <h4>Exercise</h4>
 Can you tell how many genes are up-regulated?
 
-Now let's try to extract the up and down-regulated. I'm using shuf just to show you that both the up and down regulated are both there. We will use the characters **||** that means **OR**
+Now let's try to extract the up and down-regulated. <br>
+I'm using shuf just to show you that both the up and down regulated are both there. <br>
+We will use the operators **&#124;&#124;** that means **OR**
 
 ```{bash}
-[lcozzuto@ant-login5 home]$ awk '{if ($3>=2 || $3<=-2) print $0}' my_expression.txt |shuf | head -n 6 
+awk '{if ($3>=2 || $3<=-2) print $0}' my_expression.txt | shuf | head -n 6 
 ENSMUSG00000057777.4	2264.035736	2.81870418	0.30180407	9.339516784	9.67748E-21	2.38091E-19	Mab21l2	protein_coding
 ENSMUSG00000028838.11	186.4738697	3.633200922	0.647669945	5.609648789	2.02738E-08	1.52771E-07	Extl1	protein_coding
 ENSMUSG00000064115.13	383.3757202	2.471663969	0.264982674	9.327643683	1.08251E-20	2.6546E-19	Cadm2	protein_coding
@@ -65,7 +68,7 @@ ENSMUSG00000029384.5	3.863476129	-2.243196229	0.684465108	-3.277298146	0.0010480
 ENSMUSG00000071392.6	37.23725709	-4.98355982	0.541679915	-9.200193106	3.57307E-20	8.4866E-19	Ect2l	protein_coding
 ```
 
-Sometimes you want to add more filters to be more stringent. In that case you can use the charachters **&&** that indicates **AND**. In this case we ask for both **log2FoldChange** >= 2 and **padj** <= 0.0001
+Sometimes you want to add more filters to be more stringent. In that case you can use the operator **&&** that indicates **AND**. In this case we ask for both **log2FoldChange** >= 2 and **padj** <= 0.0001
 
 ```{bash}
 awk '{if ($3>=2 && $6<=0.0001) print $0}' my_expression.txt | head -n 3

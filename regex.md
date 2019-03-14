@@ -33,7 +33,7 @@ BED files can be uploaded to public databases like **GEO** and **ArrayExpress**.
 
 <img src="images/GEO_chipseq.png" width="600"/>
 
-Let's use the right-click on FTP link to copy the link and **wget** to donwload the file.
+Let's use the right-click on FTP link to copy the link and **wget** to download the file.
 
 ```{bash}
 wget ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE41nnn/GSE41589/suppl/GSE41589_Suz12_BindingSites.txt.gz
@@ -57,7 +57,7 @@ Length: 72526 (71K) (unauthoritative)
 Since we have one row per feature, just counting the number of rows will give us the number of binding sites:
 
 ```{bash}
-zcat GSE41589_Suz12_BindingSites.txt.gz |wc -l
+zcat GSE41589_Suz12_BindingSites.txt.gz | wc -l
 
 8053
 ```
@@ -92,24 +92,24 @@ chrY
 We should not use **uniq** alone if we are not sure the values are not sorted... As an example if we shuffle the chromosome order **uniq** won't work as expected
 
 ```{bash}
-zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | uniq|wc -l 
+zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | uniq | wc -l 
 21
 
-zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf|uniq|wc -l 
+zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf | uniq | wc -l 
 7633
 ```
 
 We can fix this using another tool named **sort**
 
 ```{bash}
-zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf|sort|uniq|wc -l 
+zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf | sort | uniq | wc -l 
 21
 ```
 
 The tool **uniq** has an interesting parameter called **-c** that gives us the number of times that row was found. In this way we have the number of binding site per chromosome.
 
 ```{bash}
-zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf|sort|uniq -c 
+zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf | sort | uniq -c 
     525 chr1
     362 chr10
     603 chr11
@@ -193,7 +193,7 @@ chr18
 chr19
 ```
 
-Another useful regular expression is **^** and **$** that indicates that the patters has to be placed at the beginning or the end of the string. Also **awk** is able to use regular expressions, this will make the search more accurate since you can decide which column to scan.
+Another useful regular expression is **^** and **$** that indicates that the pattern has to be found at the beginning or the end of the string. Also **awk** is able to use regular expressions, this will make the search more accurate since you can decide which column to scan.
 
 ```{bash}
 awk -F"\t" '{if ($2~"^MCELDI") print}' proteins.tab 
@@ -245,9 +245,9 @@ GVGIGIETVDGVPVKINNNSGATFVLSDGSNTLLFNTWVQAKSGRDVTLGNFT**ATATAT**F
 
 ## Exercises
 
-* We see that some of the protein sequences are repeated in **proteins.tab** file. So different genes produces the same protein. How many unique proteins we have in our proteins.tab file?
+* We see that some of the protein sequences are repeated in **proteins.tab** file. So different genes produce the same protein. How many unique proteins do we have in our proteins.tab file?
 
-* How many sequences in SRR6466185_1.fastq.gz  contains the pattern "GGGATGACGGC"? And how many in SRR6466185_2.fastq.gz? 
+* How many sequences in SRR6466185_1.fastq.gz contain the pattern "GGGATGACGGC"? And how many in SRR6466185_2.fastq.gz? 
 
 * Can you calculate the sum of the size of the first 10 sequences in **proteins.tab**? 
 

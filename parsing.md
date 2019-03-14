@@ -1,7 +1,9 @@
 <a name="module1_parsing"></a>
 <h3>Manipulate files, piping, parsing, reformatting</h3>
 
-Parsing a file means extracting meaningful parts from a data source. In few words if you have table and are interested only in a number of columnes, extracting those columnes can be an example of **parsing**. In our case, for example, we can extract the name of our sequences by using again the program **grep** and redirecting the output to a new file.
+Parsing a file means extracting meaningful parts from a data source. <br>
+In few words if you have table and are interested only in a number of columns, extracting those columns can be an example of **parsing**. <br>
+In our case, for example, we can extract the name of our sequences by using again the program **grep** and redirecting the output to a new file.
 
 ```{bash}
 grep ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa > seq_names.txt
@@ -36,7 +38,9 @@ grep ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa | tail -n
 >ACT31309 pep supercontig:ASM2366v1:CP001665:4570538:4570678:-1 gene:ECBD_4330 transcript:ACT31309 gene_biotype:protein_coding transcript_biotype:protein_coding description:ribosomal protein L34
 ```
 
-Going back to the genome file, we can use a combination of **grep** and **wc** to count the number of bases. The option **-v** of **Grep** will remove the row with the indicated character. The option **-m** of **wc** tool allows to count only the characters, while **-l** gives you the nnumber of lines. 
+Going back to the genome file, we can use a combination of **grep** and **wc** to count the number of bases. <br>
+The option **-v** of **grep** will remove the row with the indicated character. <br>
+The option **-m** of **wc** tool allows to count only the characters, while **-l** gives you the number of lines. 
 
 ```{bash}
 grep -v ">" Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa| wc -m
@@ -68,7 +72,7 @@ ACT27085
 ACT27086
 ```
 
-Sometimes can be useful to have a random list of identifiers (for instance to have a random background). We can achieve this with the program **shuf**. The program **cat** shows the full content of a file. 
+Sometimes it can be useful to have a random list of identifiers (for instance to have a random background). We can achieve this with the program **shuf**. The program **cat** shows the full content of a file. 
 
 ```{bash}
 cut -f 1 -d " " seq_names.txt | tr -d ">" |shuf | head -n 5 > random.list
@@ -82,7 +86,8 @@ ACT29418
 ```
 PS: the list is random, so it is unlikely you will get the same result.
 
-A list of identifier can be quite useful to go back to the original name list to extract the whole information. We can do this using again the program **grep** with the options **-F** (it means search a fixed string, do not interpret it... we will explain this later) and **-f** for using patterns specified in a file.
+A list of identifiers can be quite useful to go back to the original name list to extract the whole information. <br>
+We can do this using again the program **grep** with the options **-F** (it means search a fixed string, do not interpret it... we will explain this later) and **-f** for using patterns specified in a file.
 
 ```{bash}
 grep -Ff random.list seq_names.txt 
@@ -93,7 +98,9 @@ grep -Ff random.list seq_names.txt
 >ACT31118 pep supercontig:ASM2366v1:CP001665:4355734:4355916:-1 gene:ECBD_4135 transcript:ACT31118 gene_biotype:protein_coding transcript_biotype:protein_coding description:hypothetical protein
 ```
 
-If we want to extract also the corresponding sequence the situation is more complex. First of all we need to convert the fasta format in a tab separated format with two columnes: and id and a sequence. And the use **grep** again to extract our sequences of interest. The conversion can be achieved using one of the most powerful linux tool, that is almost a programming language: **awk**
+If we want to extract also the corresponding sequence the situation is more complex. <br>
+First of all we need to convert the fasta format in a tab separated format with two columns: and id and a sequence. <br>
+And then use **grep** again to extract our sequences of interest. The conversion can be achieved using one of the most powerful linux tool, that is almost a programming language: **awk**
 
 The syntax needed by this program can be a bit tricky at the beginning. In brief you need to create this kind of structure:
 

@@ -1,7 +1,8 @@
 <a name="module1_down"></a>
 <h3>Download files from repositories</h3>
 
-Several institutions hosts differen kind of genomics data. For example the genome broswer [**Ensembl**](https://www.ensembl.org/index.html) is also a public repository of genomes and annotation that can be freely donloaded and used for any kind of analysis.
+Several institutions host different kind of genomics data. <br>
+For example the genome browser [**Ensembl**](https://www.ensembl.org/index.html) is also a public repository of genomes and annotation that can be freely downloaded and used for any kind of analysis.<br>
 The resource [**Ensembl Bacteria**](https://bacteria.ensembl.org/index.html) contains a large number of bacterial genomes and their annotation. As an example we can browse the page corresponding to [*Escherichia coli 'BL21-Gold(DE3)pLysS AG'*](https://bacteria.ensembl.org/Escherichia_coli_bl21_gold_de3_plyss_ag_/Info/Index/)
 
 <img src="images/ensembl_escherichia.png" width="800"/>
@@ -18,7 +19,7 @@ Then as an example we can use the copy the link address of the **README** file u
 
 <img src="images/right_click.png" width="800"/>
 
-Then we can go back to our command line and use the program **wget** to download that file and using **CTRL+C** to pasthe the address
+Then we can go back to our command line and use the program **wget** to download that file and using **CTRL+C** to paste the address:
 
 ```{bash}
 wget ftp://ftp.ensemblgenomes.org/pub/bacteria/release-42/fasta/bacteria_22_collection/escherichia_coli_bl21_gold_de3_plyss_ag_/dna/README
@@ -40,7 +41,7 @@ Length: 4923 (4.8K) (unauthoritative)
 2019-03-06 18:59:14 (295 MB/s) - ‘README’ saved [4923]
 ```
 
-we can then use the program **more** to display part of the content of the file
+we can then use the program **more** to display part of the content of the file:
 
 ```{bash}
 more README
@@ -73,8 +74,8 @@ The files are consistently named following this pattern:
 --More--(14%)
 ```
 
-Pressing the bar allows us to scroll down the file, while for exiting you just click **CTRL+C**
-After reading the README we can download the file named **toplevel** that contains chromsomes, regions not assembled into chromosomes and N padded haplotype/patch regions
+Pressing the bar allows us to scroll down the file, while for exiting you just click **CTRL+C**.<br>
+After reading the README we can download the file named **toplevel** that contains chromosomes, regions not assembled into chromosomes and N padded haplotype/patch regions:
 
 ```{bash}
 wget ftp://ftp.ensemblgenomes.org/pub/bacteria/release-42/fasta/bacteria_22_collection/escherichia_coli_bl21_gold_de3_plyss_ag_/dna/Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.dna.toplevel.fa.gz
@@ -94,7 +95,7 @@ drwxr-xr-x 2 lcozzuto Bioinformatics_Unit   34 Mar  6 18:17 my_ugly_folder
 -rw-r--r-- 1 lcozzuto Bioinformatics_Unit 4.9K Mar  6 18:59 README
 ```
 
-For unzipping the file we can use the program **gunzip**. The uncompressed file is now **4.5M**. 
+For unzipping the file we can use the program **gunzip**. <br>The uncompressed file is now **4.5M**. 
 
 Let's see the content of the file.
 
@@ -127,7 +128,9 @@ CCTGATGAAAAAGGCCGACGAAAACGACATTCGTTTGCCGGGCGAAGTGGCGTTCTTTAT
 CGCCAAGCGTCTACGATCTAACGTACGTGAGCTGGAAGGGGCGCTGAACCGCGTCATTGC
 ```
 
-The file contains the whole genome of the bacteria. The first line contains the character **>** and the name of the molecule / genome. This format is called [**FASTA**](https://en.wikipedia.org/wiki/FASTA_format) format and is universally used for storing one or multiple DNA/RNA/Protein sequences.
+The file contains the whole genome of the bacteria. <br>
+The first line contains the character **>** and the name of the molecule / genome. <br>
+This format is called [**FASTA**](https://en.wikipedia.org/wiki/FASTA_format) format and is universally used for storing one or multiple DNA/RNA/Protein sequences.
 
 We can now download in the same ways the proteins:
 
@@ -165,9 +168,9 @@ GFTLLNGGPKYRRAFLDWGCFHNEPGFFTAWSNLKRLLKQRNAALRQVTRYEQLRPWDKE
 --More--(0%)
 ```
 
-We see the many protein sequences are embedded in the files and separated by their name, always preceded by the character **">"**
+We see that many protein sequences are embedded in the files and separated by their name, always preceded by the character **">"**.
 
-To know how many sequences are in the files we can use the program **grep** with the option **-c** for counting the number of rows containg the character **">"**
+To know how many sequences are in the files we can use the program **grep** with the option **-c** for counting the number of rows containg the character **">"**:
 
 
 ```{bash}

@@ -1,11 +1,11 @@
 # Dates, time & location
 
 Dates:
-* **Module 1: Monday 19th 2019**
-* **Module 2: Monday 21st 2019**
+* **Module 1: Tursday 19th of March 2019**
+* **Module 2: Thursday 21rst of March 2019**
 
 Time:
-* 09:30-13:30 
+* 10:00-13:30 
 
 Location:
 Carrer del Dr. Aiguader, 88, 08003 Barcelona.
