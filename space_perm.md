@@ -96,8 +96,9 @@ In the latter example:
 
 **chmod** controls the changes of permissions the following way:
 
-**chmod [who][+,-,=][permissions] filename**
-
+```
+chmod [who][+,-,=][permissions] filename
+```
 
 * Add **writing** permissions to the **group**:
 
@@ -137,7 +138,7 @@ chmod og-rw test.txt
 -rw------- 1 sbonnin Bioinformatics_Unit 5 Mar 14 16:29 test.txt
 ```
 
-Preserve the file from any modification **even by yourself**:
+Preserve the file from any modification **even by yourself** using **a** (= all):
 
 ```{bash}
 chmod a-w test.txt 
@@ -166,9 +167,6 @@ cd my_ugly_folder/
 ```
 
 * A user that don't have the **executing** rights can't access the directory !
-
-
-
 
 
 <h3>Next Session</h3>
