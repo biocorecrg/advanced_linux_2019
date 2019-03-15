@@ -32,13 +32,33 @@ du -sh
 86M	.
 ```
 
-Reduce the space by:
-	* Compressing files.
-	* Using programs as **zcat** or **gunzip -c** to extract information of zipped files on the fly instead of extracting the data.
-	* Creating **symbolic links** instead of copying files and folders.
+* For CRG users, remember that page where you can check the space occupied in your group (and all folders!):
+  + https://accounting.linux.crg.es/addons/storage/insight/login.php
+
+* Reduce the space by:
+  + Compressing files.
+  + Using programs such as **zcat** or **gunzip -c** to extract information of zipped files on the fly instead of extracting the data.
+  + Creating **symbolic links** instead of copying files and folders.
 
 ```{bash}
+# compress files using gzip:
+gzip Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa
+
+# show the content of a gzipped file without uncompressing it:
 zcat SRR6466185_1.fastq.gz | head
+gunzip -c SRR6466185_1.fastq.gz | head
+
+# link files instead of copying them
+
+mkdir test_links
+cd test_links
+
+# ln for linking, -s for symbolic link: first comes the file to link, then where to link it!
+ln -s ../SRR6466185_1.fastq.gz .
+# give the copy of the file another name:
+ln -s ../SRR6466185_2.fastq.gz ./sample2_SRR6466185_1.fastq.gz
+
+cd ..
 ```
 
 Know the available space in the system (file system disk space usage):
@@ -76,9 +96,9 @@ Here is the owner is **sbonnin** and the group it belongs to is **Bioinformatics
 The first field here contains **10 ticks**:
 
 * tick 1: 
-  + **d**: directory
-  + **-**: regular file
-  + **l**: symbolic link (1 field). 
+	* **d**: directory
+	* **-**: regular file
+	* **l**: symbolic link (1 field) 
 * ticks 2-4: permissions of the **owner** (3 fields)
 * ticks 5-7: permissions of the **group** (3 fields)
 * ticks 8-10: permissions of **any other user** (3 fields)
@@ -93,7 +113,7 @@ The first field here contains **10 ticks**:
 	* **x**: execute
 
 * In the latter example:
-  + **sbonnin** can **read** and **wrote** the file, but NOT execute it.
+  + **sbonnin** can **read** and **write** the file, but NOT execute it.
   + Members of **Bioinformatics_Unit** can only **read** the file.
   + All other users can only **read** the file.
 
@@ -180,9 +200,9 @@ chmod -R +x my_ugly_folder/
 <h4>Use binary or octal notation for file permissions</h4>
 
 <br>
-Each tick in the first field refers to:
-* a type of permission: read, write, execute.
-* a user type: owner, group, all others.
+* Each tick in the first field refers to:
+	* a type of permission: read, write, execute.
+	* a user type: owner, group, all others.
 
 Each tick can be replaced by **0** (does not have that permission) or **1** (has that permission): this creates a **binary** number at each **user type**, that can be converted into an **octal** number.<br>
 
@@ -190,23 +210,24 @@ Hence, each **octal** number represents a set of permissions:
 
 | Binary | Octal | Permission |
 | :----: | :----: | :----: |
-| 000 |	0 | --- |
-| 001 |	1 | --x |
-| 010 |	2 | -w- |
-| 011 |	3 | -wx |
-| 100 |	4 | r-- |
-| 101 |	5 | r-x |
-| 110 |	6 | rw- |
-| 111 |	7 | rwx |
+| 000 |	0 | - - - |
+| 001 |	1 | - - x |
+| 010 |	2 | - w - |
+| 011 |	3 | - w x |
+| 100 |	4 | r - - |
+| 101 |	5 | r - x |
+| 110 |	6 | r w - |
+| 111 |	7 | r w x |
 
 <br>
-* Set the permissions so that:
+
+* Set the permissions of **my_expression.txt** (from Module 1) so that:
   + the owner can: read, write and execute.
   + the group can: read and write.
   + the other users don't have any permission.
 
 ```{bash}
-chmod 760 test.txt
+chmod 760 my_expression.txt
 # 7 for the owner
 # 6 for the group
 # 0 for other users
