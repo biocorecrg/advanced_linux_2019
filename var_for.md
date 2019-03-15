@@ -147,6 +147,17 @@ do
 done
 ```
 
+* Use **basename** to keep only the file name but not the path (if looping around files that are not in the current directory):
+
+```{bash}
+for i in directory/*tab
+do
+        echo $i
+        newname=`basename $i .tab`.txt
+        mv $i $newname
+done
+```
+
 * Loop around **folders only**:
 
 ```{bash}
