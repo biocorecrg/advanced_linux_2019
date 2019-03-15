@@ -42,6 +42,7 @@ ls $pathtodir
 ```{bash}
 # store the output of "ls -l" and store it in "mylist"
 mylist=$(ls -l)
+mylist=`ls -l`
 
 # Show content of "mylist"
 echo $mylist
@@ -77,6 +78,28 @@ echo $mynumber_one
 echo ${mynumber}_one
 ```
 
+* Calculations on variables:
+
+```{bash}
+# create the variable "num" that contains the number 2
+num=2
+
+# add 1 to "num"
+echo $((num + 1))
+
+# same as:
+echo $(echo $nextnum+1 | bc)
+
+# same as:
+echo `echo $num+1 | bc`
+
+# divide by 3:
+echo `echo $num/3 | bc`
+
+# show 4 decimals:
+echo "scale=4; $((num))/3" | bc
+
+```
 
 A few built-in variables exist:
 
@@ -86,6 +109,10 @@ A few built-in variables exist:
 | $HOME | the path of the home directory |
 | $HOSTNAME | the hostname of the machine you are currently connected to |
 | $RANDOM | a different random number each time it is accessed |
+
+```{bash}
+echo my user name is $USER, I work on the machine $HOSTNAME and my home directory path is $HOME.
+```
 
 <h3>"For" loops</h3>
 
@@ -187,6 +214,42 @@ done
 ```{bash}
 for i in */; do echo $i; cd $i; ls * | wc -l; cd ..; done
 ```
+
+<h4>Exercise</h4>
+
+* Write a **for loop** and use your knowledge of **variables** to retrieve the **fasta** sequences of the following proteins from the Uniprot website:
+  + Q9Y6G1, Q9NS00, Q9GZY8, O75843, Q3L8U1, P49810, P01584, O00182, Q02224, Q13547
+
+  + Note: for one protein only (e.g. O94907 gene DKK1):
+```{bash}
+wget https://www.uniprot.org/uniprot/O94907.fasta
+```
+
+* Now for each of these proteins, write a **for loop** to :
+  + create a **folder per protein** (using the protein name)
+  + move the fasta files of each protein into the appropriate folder
+  + (optional): change the name of the fasta file to add up the name of the corresponding gene (e.g. O94907_DKK1.fasta). Note: the name of the gene is found in the header of each fasta file.
+  + you will need: **cd**, **mkdir**, **mv**, **basename**, **cut**, **grep**.
+
+```{bash}
+for protein in Q9Y6G1 Q9NS00 Q9GZY8 O75843 Q3L8U1 P49810 P01584 O00182 Q02224 Q13547
+do
+wget https://www.uniprot.org/uniprot/${protein}.fasta
+done
+```
+
+```{bash}
+for protein in Q9Y6G1 Q9NS00 Q9GZY8 O75843 Q3L8U1 P49810 P01584 O00182 Q02224 Q13547
+do
+mkdir $protein
+mv ${protein}.fasta $protein
+cd $protein
+genename=$(grep ">" ${protein}.fasta | cut -d"|" -f3 | cut -d"_" -f1)
+mv ${protein}.fasta `basename $protein .fastq`_${genename}.fasta
+cd ..
+done
+```
+
 
 [Back to the home page](https://biocorecrg.github.io/advanced_linux_2019)
 
