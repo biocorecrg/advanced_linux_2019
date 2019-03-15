@@ -30,14 +30,14 @@ To be able to:
 
 # Program
 * [**Module one**](https://biocorecrg.github.io/advanced_linux_2019/Module1)
-	* Create directory and practice moving around. Knowing more about a function
-	* Download files from repositories.
-	* Manipulate files, piping, parsing, reformatting.
-	* Sequence file formats: Fasta and fastq.
-	* Bed format and regular expressions.
+	* [Create directory and practice moving around. Knowing more about a function](https://biocorecrg.github.io/advanced_linux_2019/Module1)
+	* [Download files from repositories.](https://biocorecrg.github.io/advanced_linux_2019/download)
+	* [Manipulate files, piping, parsing, reformatting.](https://biocorecrg.github.io/advanced_linux_2019/parsing)
+	* [Sequence file formats: Fasta and fastq.](https://biocorecrg.github.io/advanced_linux_2019/bioformat)
+	* [Bed format and regular expressions.](https://biocorecrg.github.io/advanced_linux_2019/regex)
 
 * [**Module two**](https://biocorecrg.github.io/advanced_linux_2019/Module2)
-	* Tabular formats
-	* GTF files
-	* Space on volumes and permissions
-	* Variables and "For" loops
+	* [Tabular formats](https://biocorecrg.github.io/advanced_linux_2019/Module2)
+	* [GTF files](https://biocorecrg.github.io/advanced_linux_2019/gtf_format)
+	* [Space on volumes and permissions](https://biocorecrg.github.io/advanced_linux_2019/space_perm)
+	* [Variables and "For" loops](https://biocorecrg.github.io/advanced_linux_2019/var_for)
