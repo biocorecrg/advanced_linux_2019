@@ -99,8 +99,18 @@ grep -Ff random.list seq_names.txt
 ```
 
 If we want to extract also the corresponding sequence the situation is more complex. <br>
+
 First of all we need to convert the fasta format in a tab separated format with two columns: and id and a sequence. <br>
-And then use **grep** again to extract our sequences of interest. The conversion can be achieved using one of the most powerful linux tool, that is almost a programming language: **awk**
+And then use **grep** again to extract our sequences of interest. <br>
+The conversion can be achieved using one of the most powerful linux tool, that is a programming language: **awk**
+
+<h4>awk</h4>
+
+Awk's basic syntax is:
+
+<font size="5" color="#ff0000"> awk '*PATTERN* { *ACTION* }' *FILENAME*</font>
+
+
 
 The syntax needed by this program can be a bit tricky at the beginning. In brief you need to create this kind of structure:
 
