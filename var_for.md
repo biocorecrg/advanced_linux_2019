@@ -98,8 +98,8 @@ The basic construct is:
 * At each **iteration** (repetition) of the loop, VARIABLE will be assigned a value from RANGE, sequentially.
 
 * In the example below:
-  + at the first iteration, 1 is assigned to "i"
-  + at the second iteration, 2 is assigned to "i"
+  + at the first iteration, **1** is assigned to **i**
+  + at the second iteration, **2** is assigned to **i**
   + and so on...
 
 ```{bash}
