@@ -108,6 +108,7 @@ The conversion can be achieved using one of the most powerful linux tool, that i
 
 <font size="4" color="#ff0000">awk '</font><font size="4" color="#000000">OPTIONAL PATTERN</font> <font size="4" color="#ff0000">{</font> <font size="4" color="#000000">SOME INSTRUCTIONS</font> <font size="4" color="#ff0000">}'</font> <font size="4" color="#000000">FILENAME</font>
 
+<br>
 Awk reads the files line by line.
 <br>
 As a naive example we can just print the content of the file using **awk** (**$0** is the whole row):
