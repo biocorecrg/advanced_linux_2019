@@ -104,19 +104,13 @@ First of all we need to convert the fasta format in a tab separated format with 
 And then use **grep** again to extract our sequences of interest. <br>
 The conversion can be achieved using one of the most powerful linux tool, that is a programming language: **awk**
 
-<h4>awk</h4>
+* Awk's basic syntax:
 
-Awk's basic syntax is:
+<font size="4" color="#ff0000">awk '</font><font size="4" color="#000000">OPTIONAL PATTERN</font> <font size="4" color="#ff0000">{</font> <font size="4" color="#000000">SOME INSTRUCTIONS</font> <font size="4" color="#ff0000">}'</font> <font size="4" color="#000000">FILENAME</font>
 
-<font size="5" color="#ff0000"> awk '*PATTERN* { *ACTION* }' *FILENAME*</font>
-
-
-
-The syntax needed by this program can be a bit tricky at the beginning. In brief you need to create this kind of structure:
-
-    awk '{SOME INSTRUCTIONS HERE}' FILENAME
-
-As a naive example we can just print the content of the file using **awk**
+Awk reads the files line by line.
+<br>
+As a naive example we can just print the content of the file using **awk** (**$0** is the whole row):
 
 ```{bash}
 awk '{print $0}'  Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa |head -n 3 
@@ -146,7 +140,17 @@ awk '{if ($0~">") {print $0}}' Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v
 >ACT27084 pep supercontig:ASM2366v1:CP001665:2855:3928:1 gene:ECBD_0003 transcript:ACT27084 gene_biotype:protein_coding transcript_biotype:protein_coding description:DNA replication and repair protein RecF
 ```
 
-So, combining the previous example, we can remove the carriage return and in case we found the **>** character we print that row preceded by a carriage return and followd by a tab (**\t**)
+Note that this syntax can be simplified when looking for patterns:
+
+```{bash}
+awk '$0 ~ ">" {print $0}' Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa | head -n 3
+
+>ACT27082 pep supercontig:ASM2366v1:CP001665:347:1750:1 gene:ECBD_0001 transcript:ACT27082 gene_biotype:protein_coding transcript_biotype:protein_coding description:chromosomal replication initiator protein DnaA
+>ACT27083 pep supercontig:ASM2366v1:CP001665:1755:2855:1 gene:ECBD_0002 transcript:ACT27083 gene_biotype:protein_coding transcript_biotype:protein_coding description:DNA polymerase III, beta subunit
+>ACT27084 pep supercontig:ASM2366v1:CP001665:2855:3928:1 gene:ECBD_0003 transcript:ACT27084 gene_biotype:protein_coding transcript_biotype:protein_coding description:DNA replication and repair protein RecF
+```
+
+So, combining the previous example, we can remove the carriage return and in case we found the **>** character we print that row preceded by a carriage return and followed by a tab (**\t**)
 
 ```{bash}
 awk '{ORS=""; if ($0~">") {print "\n"$0"\t"} else {print $0}}' Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa |head -n 3
