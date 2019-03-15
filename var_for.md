@@ -9,7 +9,7 @@ It is meant to **store temporarily** a piece of information.
 
 ```{bash}
 # Assign the string "hola" to the variable "myfirstvariable":
-myfirstvariable="hola"
+myfirstvariable=hola
 ```
 
 * Variable names can be written in:
@@ -18,6 +18,7 @@ myfirstvariable="hola"
   + a mixture of both
 
 * Access the content of a variable with **$**
+<br>
 * Show the content of a variable with **echo**
 
 ```{bash}
@@ -25,7 +26,7 @@ myfirstvariable="hola"
 echo $myfirstvariable
 ```
 
-Store a directory path:
+Store a directory path in a variable and list what is inside that directory:
 
 ```{bash}
 # shortcut to a directory path
@@ -102,10 +103,9 @@ echo `echo $num/3 | bc`
 
 # show 4 decimals:
 echo "scale=4; $((num))/3" | bc
-
 ```
 
-A few built-in variables exist:
+A few built-in variables exist, for example:
 
 | Variable | Returns: |
 | :---: | :---: |
@@ -122,11 +122,12 @@ echo my user name is $USER, I work on the machine $HOSTNAME and my home director
 
 **For loops** are used to repeat certain tasks or blocks of code.
 <br>
+<br>
 The basic construct is:
 
 <img src="images/forloop.png" width="220"/>
 
-* At each **iteration** (repetition) of the loop, VARIABLE will be assigned a value from RANGE, sequentially.
+* At each **iteration** (repetition) of the loop, VARIABLE is assigned a value from RANGE, sequentially.
 
 * In the example below:
   + at the first iteration, **1** is assigned to **i**
@@ -140,7 +141,7 @@ do
 done
 ```
 
-* Loop on a longer range of values:
+* Loop on longer ranges of values:
 
 ```{bash}
 # 1 to 100
@@ -239,21 +240,22 @@ for i in */; do echo $i; cd $i; ls * | wc -l; cd ..; done
 
 <h4>Exercises</h4>
 
-1. Write a **for loop** and use your knowledge of **variables** to retrieve the **fasta** sequences of the following proteins from the Uniprot website:
+1. Using the fastq files from Module 1:
+  + create a **for loop** that will extract the sequences which contain **ATGCGTAA** and will create a new file containing the corresponding fastq entry (4 rows!). Tip: check parameters **-A** and **-B** of **grep** !
+
+2. Write a **for loop** and use your knowledge of **variables** to retrieve the **fasta** sequences of the following proteins from the Uniprot website:
   + Q9Y6G1, Q9NS00, Q9GZY8, O75843, Q3L8U1, P49810, P01584, O00182, Q02224, Q13547
   + Help: for one protein only (e.g. ID: O94907 gene: DKK1), use:
 ```{bash}
 wget https://www.uniprot.org/uniprot/O94907.fasta
 ```
 
-2. For each of these proteins, write a **for loop** to :
+3. For each of these proteins, write a **for loop** to :
   + create a **folder for each protein** (using the protein ID).
   + move the fasta files of each protein into the appropriate folder.
   + (optional): change the name of the fasta file to add up the name of the corresponding gene (e.g. O94907.fasta will become O94907_DKK1.fasta). Note: the name of the gene is found in the header of each fasta file!
   + you will need: **cd**, **mkdir**, **mv**, **basename**, **cut**, **grep**.
 
-3. Using the fastq files from Module 1:
-  + create a **for loop** that will extract the sequences which contain **ATGCGTAA** and will create a new file containing the corresponding fastq entry (4 rows!). Tip: check parameters **-A** and **-B** of **grep** !
 
 --------
 
@@ -264,12 +266,18 @@ correction
 
 ```{bash}
 # 1.
+for file in *fastq.gz
+do echo $file
+zcat $file | grep -A 2 -B 1 "ATGCGTAA" > `basename $file .fastq.gz`_ATGCGTAA.txt
+done
+
+# 2.
 for protein in Q9Y6G1 Q9NS00 Q9GZY8 O75843 Q3L8U1 P49810 P01584 O00182 Q02224 Q13547
 do
 wget https://www.uniprot.org/uniprot/${protein}.fasta
 done
 
-# 2. 
+# 3. 
 for protein in Q9Y6G1 Q9NS00 Q9GZY8 O75843 Q3L8U1 P49810 P01584 O00182 Q02224 Q13547
 do
 mkdir $protein
@@ -278,12 +286,6 @@ cd $protein
 genename=$(grep ">" ${protein}.fasta | cut -d"|" -f3 | cut -d"_" -f1)
 mv ${protein}.fasta `basename $protein .fastq`_${genename}.fasta
 cd ..
-done
-
-# 3.
-for file in *fastq.gz
-do echo $file
-zcat $file | grep -A 2 -B 1 "ATGCGTAA" > `basename $file .fastq.gz`_ATGCGTAA.txt
 done
 ```
 
