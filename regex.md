@@ -27,7 +27,7 @@ This kind of file can be fed to a genome browser like [**UCSC genome browser**](
 
 <h4> Genome browser </h4>
 
-<img src="images/genome_browser.png" width="800"/>
+<img src="images/genome_browser.png" width="900"/>
 
 BED files can be uploaded to public databases like **GEO** and **ArrayExpress**. As an example let's download the putative binding site positions obtained by a ChIP-seq experiment on Suz12 transcription factor [**GSE41589**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE41589). 
 
