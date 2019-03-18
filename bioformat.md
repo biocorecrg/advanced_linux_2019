@@ -11,7 +11,11 @@ This format allows to store also the information about the quality of that parti
 
 <img src="images/fastq_format.png" width="400"/>
 
-The format contains four rows for sequence with a header containing **@** as the first character, the sequence content, a **spacer** and the quality encoded using ASCII characters.
+The format contains four rows for sequence with:
+* a header containing **@** as the first character
+* the sequence content
+* a **spacer**
+* the quality encoded using ASCII characters.
 
 <img src="images/phred_quality.png" width="400"/>
 
