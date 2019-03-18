@@ -4,12 +4,12 @@
 We already showed the fasta format. There is a header characterized by the presence of **>** and a number of rows containing the sequence.
 The format is used for both nucleic acids and proteins.
 
-<img src="images/fasta_format.png" width="400"/>
+<img src="images/fasta_format.png" width="600"/>
 
 Another way to store sequencing data, and particularly the short reads coming from the sequencers is the **Fastq** format.
 This format allows to store also the information about the quality of that particular base, i.e. the probability that that base reading was true or not.
 
-<img src="images/fastq_format.png" width="400"/>
+<img src="images/fastq_format.png" width="600"/>
 
 The format contains four rows for sequence with:
 * a header containing **@** as the first character
@@ -17,7 +17,7 @@ The format contains four rows for sequence with:
 * a **spacer**
 * the quality encoded using ASCII characters.
 
-<img src="images/phred_quality.png" width="400"/>
+<img src="images/phred_quality.png" width="600"/>
 
 Currently most of the journals require the submissions of NGS data in a public repository upon publishing.
 
