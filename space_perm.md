@@ -16,21 +16,26 @@ Check the size of a file with :
 ls -lh Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa 
 ```
 
-Check the size of a folder with:
+Get a summary of the disk usage size of a directory:
 * **du -sh**: 
+	* **du** stands for **D**isk **U**sage.
 	* **s**: summarize.
-	* **h**: human readable.
-
-**du** gives an estimate of the file space usage.
+	* **h**: human readable format.
 
 ```{bash}
 du -sh my_beautiful_folder/
 
 3.5K	my_beautiful_folder/
-
-du -sh 
-86M	.
 ```
+
+Display disk usage of all the files and directories:
+* ** du -ah**:
+	* **a**: all.
+
+```{bash}
+du -ah my_beautiful_folder/
+```
+
 
 * For CRG users, remember that page where you can check the space occupied in your group (and all folders!):
   + https://accounting.linux.crg.es/addons/storage/insight/login.php
@@ -61,8 +66,9 @@ ln -s ../SRR6466185_2.fastq.gz ./sample2_SRR6466185_1.fastq.gz
 cd ..
 ```
 
-Know the available space in the system (file system disk space usage):
+Show the system disk space statistics (file system disk space usage):
 * **df -h**. 
+	* **df** stands for: **D**isk **F**ilesystem.
 	* **h**: human readable.
 
 ```{bash}
