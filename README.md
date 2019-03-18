@@ -22,6 +22,8 @@ CRG Training center, PRBB building ground floor.
 
 from the CRG [Bioinformatics core facility](https://biocore.crg.eu/) (office 460, 4th floor hotel side)
 
+Material available at https://biocorecrg.github.io/advanced_linux_2019/
+
 # Learning objectives
 To be able to:
 * Access genomics data from public repositories
