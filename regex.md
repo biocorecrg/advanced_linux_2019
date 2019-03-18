@@ -106,7 +106,7 @@ zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf | sort | uniq | wc -l
 21
 ```
 
-The tool **uniq** has an interesting parameter called **-c** that gives us the number of times that row was found. In this way we have the number of binding site per chromosome.
+The tool **uniq** has an interesting parameter called **-c** that gives us the number of times that a particular row was found. In this way we have the number of binding site per chromosome.
 
 ```{bash}
 zcat GSE41589_Suz12_BindingSites.txt.gz | cut -f 1 | shuf | sort | uniq -c 
