@@ -29,7 +29,7 @@ du -sh my_beautiful_folder/
 ```
 
 Display disk usage of all the files and directories:
-* ** du -ah**:
+* **du -ah**:
 	* **a**: all.
 
 ```{bash}
