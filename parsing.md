@@ -111,7 +111,7 @@ The conversion can be achieved using one of the most powerful linux tool, that i
 <br>
 Awk reads the files line by line.
 <br>
-As a naive example we can just print the content of the file using **awk** (**$0** is the whole row):
+As a naive example we can just print the content of the file using **awk** (**$0** is the whole line):
 
 ```{bash}
 awk '{print $0}'  Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa |head -n 3 
