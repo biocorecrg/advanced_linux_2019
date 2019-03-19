@@ -15,7 +15,7 @@ Typical 6-fields bed format
 
 Additionally you may have up to 6 more fields:
 
-|thickStart|thickStart|itemRgb|blockCount|blockSizes|blockStarts|
+|thickStart|thickEnd|itemRgb|blockCount|blockSizes|blockStarts|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |127471196|127472363|255,0,0|0|0|0|
 |127472363|127473530|255,0,0|0|0|0|
