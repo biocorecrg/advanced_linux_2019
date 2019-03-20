@@ -5,7 +5,7 @@
 When we deal with analyzing valuable data we should consider different problems:
 * Consuming too much disk space
 * Consuming too much memory
-* Corrupting / deleting files
+* Corrupting / deleting files when utilizing all disk space
 
 Check the size of a file with :
 * **ls -lh**: 
@@ -17,7 +17,7 @@ ls -lh Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa
 ```
 
 Get a summary of the disk usage size of a directory:
-* **du -sh**: 
+* **du -sh**:
 	* **du** stands for **D**isk **U**sage.
 	* **s**: summarize.
 	* **h**: human readable format.
@@ -37,7 +37,7 @@ du -ah my_beautiful_folder/
 ```
 
 
-* For CRG users, remember that page where you can check the space occupied in your group (and all folders!):
+* For CRG users, remember that you can check the space occupied by each directory of your group:
   + https://accounting.linux.crg.es/addons/storage/insight/login.php
 
 * Reduce the space by:
@@ -53,7 +53,7 @@ gzip Escherichia_coli_bl21_gold_de3_plyss_ag_.ASM2366v1.pep.all.fa
 zcat SRR6466185_1.fastq.gz | head
 gunzip -c SRR6466185_1.fastq.gz | head
 
-# link files instead of copying them
+# link files instead of copying them:
 
 mkdir test_links
 cd test_links
@@ -61,7 +61,7 @@ cd test_links
 # ln for linking, -s for symbolic link: first comes the file to link, then where to link it!
 ln -s ../SRR6466185_1.fastq.gz .
 # give the copy of the file another name:
-ln -s ../SRR6466185_2.fastq.gz ./sample2_SRR6466185_1.fastq.gz
+ln -s ../SRR6466185_2.fastq.gz ./sample1_read2.fastq.gz
 
 cd ..
 ```
@@ -101,10 +101,10 @@ Here is the owner is **sbonnin** and the group it belongs to is **Bioinformatics
 
 The first field here contains **10 ticks**:
 
-* tick 1: 
+* tick 1 (1 field): 
 	* **d**: directory
 	* **-**: regular file
-	* **l**: symbolic link (1 field) 
+	* **l**: symbolic link
 * ticks 2-4: permissions of the **owner** (3 fields)
 * ticks 5-7: permissions of the **group** (3 fields)
 * ticks 8-10: permissions of **any other user** (3 fields)
@@ -113,22 +113,32 @@ The first field here contains **10 ticks**:
 | :---:  | :---:  | :---:  |
 | rw- | r-- | r-- |
 
+<br>
 * What kind of permissions are we talking about?
 	* **r**: read
 	* **w**: write
 	* **x**: execute
-
+<br>
 * In the latter example:
-  + **sbonnin** can **read** and **write** the file, but NOT execute it.
+  + **sbonnin** can **read** and **write** the file, but **NOT execute** it.
   + Members of **Bioinformatics_Unit** can only **read** the file.
   + All other users can only **read** the file.
 
+<br>
 * **chmod** controls the changes of permissions:
 
 ```
 chmod [who][+,-,=][permissions] filename
 ```
 
+| User | letter |
+| :---:  | :---:  |
+| owner | u |
+| group | g |
+| users not in the group | o |
+| all users | a |
+
+<br>
 * Add **writing** permissions to the **group**:
 
 ```{bash}
@@ -167,7 +177,7 @@ chmod og-rw test.txt
 -rw------- 1 sbonnin Bioinformatics_Unit 5 Mar 14 16:29 test.txt
 ```
 
-* Preserve the file from any modification **even by yourself** using **a** (= all):
+* Preserve the file from any modification **even done by yourself** using **a** (= all):
 
 ```{bash}
 chmod a-w test.txt 
@@ -203,9 +213,9 @@ cd my_ugly_folder/
 chmod -R +x my_ugly_folder/
 ```
 
-<h4>Use binary or octal notation for file permissions</h4>
+<h4>Use octal notation for file permissions</h4>
 
-<br>
+
 * Each tick in the first field refers to:
 	* a type of permission: read, write, execute.
 	* a user type: owner, group, all others.

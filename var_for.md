@@ -70,7 +70,7 @@ My name is Sarah
 ```
 
 * Use **curly brackets** if there are ambiguities:
-	* **{ }** **isolate** the variable name
+	* **= }** **isolate** the variable name
 
 ```{bash}
 # create a variable
@@ -104,6 +104,9 @@ echo `echo $num/3 | bc`
 # show 4 decimals:
 echo "scale=4; $((num))/3" | bc
 ```
+**bc** is **b**asic **c**alculator.
+
+<br>
 
 A few built-in variables exist, for example:
 
@@ -114,6 +117,8 @@ A few built-in variables exist, for example:
 | $HOSTNAME | the hostname of the machine you are currently connected to |
 | $RANDOM | a different random number each time it is accessed |
 
+<br>
+Example:
 ```{bash}
 echo my user name is $USER, I work on the machine $HOSTNAME and my home directory path is $HOME.
 ```
@@ -127,7 +132,7 @@ The basic construct is:
 
 <img src="images/forloop.png" width="220"/>
 
-* At each **iteration** (repetition) of the loop, VARIABLE is assigned a value from RANGE, sequentially.
+* At each **iteration** (repetition) of the loop, **VARIABLE** is assigned a value from **RANGE**, sequentially.
 
 * In the example below:
   + at the first iteration, **1** is assigned to **i**
@@ -185,7 +190,7 @@ done
 ```
 
 * Use a for loop to change the extension of files:
-  + **\*txt** is looking for all files with the **.txt** extension.
+  + **\*txt** is looking for all files which names end with **txt**.
 
 ```{bash}
 for i in *txt
@@ -196,7 +201,7 @@ do
 done
 ```
 
-* Use **basename** to keep only the file name but not the path (if looping around files that are not in the current directory):
+* Use **basename** to keep only the file name but not the path (when looping around files that are not in the current directory for example):
   + **basename** take as a first argument the name of a variable, and as a second argument the **suffix** to remove (typically the extension of a file).
 
 ```{bash}
@@ -241,21 +246,23 @@ for i in */; do echo $i; cd $i; ls * | wc -l; cd ..; done
 <h4>Exercises</h4>
 
 1. Using the fastq files from Module 1:
-  + create a **for loop** that will extract the sequences which contain **ATGCGTAA** and will create a new file containing the corresponding fastq entry (4 rows!). Tip: check parameters **-A** and **-B** of **grep** !
-
+  + create a **for loop** that extracts the sequences which contain **ATGCGTAA** and creates a new file containing the corresponding **fastq entry (4 rows!)**.
+  + Note: check parameters **-A** and **-B** of **grep** !
+<br>
 2. Write a **for loop** and use your knowledge of **variables** to retrieve the **fasta** sequences of the following proteins from the Uniprot website:
   + Q9Y6G1, Q9NS00, Q9GZY8, O75843, Q3L8U1, P49810, P01584, O00182, Q02224, Q13547
-  + Help: for one protein only (e.g. ID: O94907 gene: DKK1), use:
+  + Note: for one protein only (e.g. ID: O94907 gene: DKK1), you would use:
 ```{bash}
 wget https://www.uniprot.org/uniprot/O94907.fasta
 ```
-
+<br>
 3. For each of these proteins, write a **for loop** to :
   + create a **folder for each protein** (using the protein ID).
   + move the fasta files of each protein into the appropriate folder.
-  + (optional): change the name of the fasta file to add up the name of the corresponding gene (e.g. O94907.fasta will become O94907_DKK1.fasta). Note: the name of the gene is found in the header of each fasta file!
+  + (optional): change the name of the fasta file to add up the **name of the corresponding gene** (e.g. O94907.fasta will become O94907_DKK1.fasta). Note: the name of the gene is found in the header of each fasta file!
   + you will need: **cd**, **mkdir**, **mv**, **basename**, **cut**, **grep**.
-
+<br>
+***If you feel confident, do 2. and 3. together !***
 
 --------
 
@@ -283,6 +290,17 @@ do
 mkdir $protein
 mv ${protein}.fasta $protein
 cd $protein
+genename=$(grep ">" ${protein}.fasta | cut -d"|" -f3 | cut -d"_" -f1)
+mv ${protein}.fasta `basename $protein .fastq`_${genename}.fasta
+cd ..
+done
+
+# 2. + 3. together
+for protein in Q9Y6G1 Q9NS00 Q9GZY8 O75843 Q3L8U1 P49810 P01584 O00182 Q02224 Q13547
+do
+mkdir $protein
+cd $protein
+wget https://www.uniprot.org/uniprot/${protein}.fasta
 genename=$(grep ">" ${protein}.fasta | cut -d"|" -f3 | cut -d"_" -f1)
 mv ${protein}.fasta `basename $protein .fastq`_${genename}.fasta
 cd ..
