@@ -27,7 +27,7 @@ Material available at https://biocorecrg.github.io/advanced_linux_2019/
 # Learning objectives
 To be able to:
 * Access genomics data from public repositories
-* Know the existance of different data formats
+* Know the existence of different data formats
 * Be able to use the Linux commands to parse and convert those formats
 
 # Program
