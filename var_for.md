@@ -248,7 +248,7 @@ for i in */; do echo $i; cd $i; ls * | wc -l; cd ..; done
 1. Using the fastq files from Module 1:
   + create a **for loop** that extracts the sequences which contain **ATGCGTAA** and creates a new file containing the corresponding **fastq entry (4 rows!)**.
   + Note: check parameters **-A** and **-B** of **grep** !
-<br>
+<br><br>
 2. Write a **for loop** and use your knowledge of **variables** to retrieve the **fasta** sequences of the following proteins from the Uniprot website:
   + Q9Y6G1, Q9NS00, Q9GZY8, O75843, Q3L8U1, P49810, P01584, O00182, Q02224, Q13547
   + Note: for one protein only (e.g. ID: O94907 gene: DKK1), you would use:
