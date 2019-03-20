@@ -262,6 +262,7 @@ wget https://www.uniprot.org/uniprot/O94907.fasta
   + (optional): change the name of the fasta file to add up the **name of the corresponding gene** (e.g. O94907.fasta will become O94907_DKK1.fasta). Note: the name of the gene is found in the header of each fasta file!
   + you will need: **cd**, **mkdir**, **mv**, **basename**, **cut**, **grep**.
 <br>
+<br>
 ***If you feel confident, do 2. and 3. together !***
 
 --------
