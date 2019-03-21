@@ -5,6 +5,11 @@
 A variable can contain a number, a character or a string of character.<br>
 It is meant to **store temporarily** a piece of information.
 
+* Why do you want to learn about variable ?
+  + to store paths or long strings of characters.
+  + to run loops (for, while, etc.).
+  + inside bash/shell scripts (e.g. arguments passed to scripts are variables).
+
 * Create a variable:
 
 ```{bash}
@@ -47,6 +52,17 @@ mylist=`ls -l`
 
 # Show content of "mylist"
 echo $mylist
+```
+
+* Short cut to command:
+  * Shortcut to a command or a set of commands:
+
+```{bash}
+# Between quotes
+myls="ls -l"
+
+# Will run "ls -l" where you are
+$myls
 ```
 
 * Using quotes:
@@ -93,7 +109,7 @@ num=2
 echo $((num + 1))
 
 # same as:
-echo $(echo $nextnum+1 | bc)
+echo $(echo $num+1 | bc)
 
 # same as:
 echo `echo $num+1 | bc`
