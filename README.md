@@ -2,7 +2,7 @@
 
 Dates:
 * **Module 1: Tuesday 19th of March 2019**
-* **Module 2: Thursday 21rst of March 2019**
+* **Module 2: Thursday 21st of March 2019**
 
 Time:
 * 10:00-13:30 
@@ -27,7 +27,7 @@ Material available at https://biocorecrg.github.io/advanced_linux_2019/
 # Learning objectives
 To be able to:
 * Access genomics data from public repositories
-* Know the existence of different data formats
+* Know different data formats used in genomics
 * Be able to use the Linux commands to parse and convert those formats
 
 # Program
